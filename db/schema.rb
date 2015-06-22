@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150622071940) do
     t.boolean  "admin",           default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.string   "image"
   end
 
   create_table "users", force: :cascade do |t|
