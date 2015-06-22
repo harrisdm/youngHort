@@ -16,6 +16,15 @@ ActiveRecord::Schema.define(version: 20150622071940) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "mentors", force: :cascade do |t|
+    t.text     "name"
+    t.text     "link"
+    t.text     "bio"
+    t.text     "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text   "content"
