@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dcsbny2ts
+  api_key: '421155519552821'
+  api_secret: RfFRlKDHNW04UzTCbEJjn5L-20s
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dcsbny2ts
+  api_key: '421155519552821'
+  api_secret: RfFRlKDHNW04UzTCbEJjn5L-20s
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dcsbny2ts
+  api_key: '421155519552821'
+  api_secret: RfFRlKDHNW04UzTCbEJjn5L-20s
+  enhance_image_tag: true
+  static_image_support: false

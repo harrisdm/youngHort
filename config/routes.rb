@@ -31,9 +31,9 @@ Rails.application.routes.draw do
   get   '/profile/edit'  =>  'profiles#edit'
   patch '/profile/'      =>  'profiles#update'
   get   '/profiles/:id'   =>  'profiles#show',     as: 'profiles'
+  delete   '/profile/delete_img'  =>  'profiles#delete_img'
 
   get 'pages/home'
-
   get 'pages/secure'
 
   

@@ -8,6 +8,12 @@
 <div>Course: <%= @user.profile.course_of_study %></div>
 <div>Image: <%= @user.profile.image %></div>
 
+<%# Inline calling for the profile image %>
+<%= cl_image_tag(@user.profile.image, :alt => "Profile Image", :width => 90, :height => 90, :crop => :fill, :gravity => :face) %>
 
-<%= link_to "Edit", profile_edit_path %>
+<%# Helper code to get sized image or return a default image %>
+<%= fetch_profile_image(@user.profile.image) %>
+
+<div><%= link_to "Delete Image", profile_delete_img_path, method: :delete %></div>
+<div><%= link_to "Edit", profile_edit_path %></div>
 
