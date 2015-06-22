@@ -1,26 +1,27 @@
-class ProfilesController < Devise::RegistrationsController
-  def new
-    super
+class ProfilesController < ApplicationController
+  def show
+    @user = User.find(params[:id])
   end
 
-  def create
-    # add custom create logic here
-    # Strip the fields out of the resource params and save them to 
-    # another model then you can call super to have the method behave as it normal:
-    #raise params.inspect
-    
-    # @profile = Profile.create(profile_params)
-    # @profile.save
-    super 
+  def edit
+    @profile = Profile.where(:user_id => current_user.id)
+    @profile = @profile.first
   end
 
   def update
-    super
+    #raise params.inspect
+    # profile = Profile.where(:user_id => current_user.id)
+    # profile = profile.first  
+    profile = Profile.find(params[:profile][:id])       
+    profile.update profile_params                       # Update the property
+    redirect_to profiles_path(current_user.id)          # Return to the property page
   end
 
 
   private
+
   def profile_params
-    params.require(:user).require(:profile).permit(:name, :age, :place_of_study, :course_of_study)
+    params.require(:profile).permit(:name, :age, :place_of_study, :course_of_study)
   end
+
 end

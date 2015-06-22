@@ -10,6 +10,15 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     super
   end
+
+  # def edit
+  #   super
+  # end
+
+  # def update
+  #   raise params.inspect
+  #   super
+  # end
  
   private
  

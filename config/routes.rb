@@ -23,8 +23,14 @@
 
 Rails.application.routes.draw do
   
+  get 'users/show'
+
   devise_for :users, controllers: { registrations: "registrations" }
   root to: 'pages#home'
+
+  get   '/profile/edit'  =>  'profiles#edit'
+  patch '/profile/'      =>  'profiles#update'
+  get   '/profiles/:id'   =>  'profiles#show',     as: 'profiles'
 
   get 'pages/home'
 
