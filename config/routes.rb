@@ -29,14 +29,18 @@
 
 Rails.application.routes.draw do
   
-resources :posts
-
   devise_for :users, controllers: { registrations: "registrations" }
-  root to: 'pages#home'
+  root to:  'pages#home'
 
-  get 'pages/home'
+  resources :posts
 
-  get 'pages/secure'
+  get       '/profile/edit'         =>  'profiles#edit'
+  patch     '/profile/'             =>  'profiles#update'
+  get       '/profiles/:id'         =>  'profiles#show',     as: 'profiles'
+  delete    '/profile/delete_img'   =>  'profiles#delete_img'
+
+  get       'pages/home'
+  get       'pages/secure'
 
   
 end
