@@ -6,7 +6,11 @@
 #  title   :string
 #  content :text
 #  date    :date
-#  image   :text
+#  image1  :text
+#  image2  :text
+#  image3  :text
+#  image4  :text
+#  image5  :text
 #
 
 class Post < ActiveRecord::Base

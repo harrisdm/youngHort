@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622060134) do
+ActiveRecord::Schema.define(version: 20150622071940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,11 @@ ActiveRecord::Schema.define(version: 20150622060134) do
     t.string "title"
     t.text   "content"
     t.date   "date"
-    t.text   "image"
+    t.text   "image1"
+    t.text   "image2"
+    t.text   "image3"
+    t.text   "image4"
+    t.text   "image5"
   end
 
   create_table "profiles", force: :cascade do |t|

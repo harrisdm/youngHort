@@ -12,8 +12,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new post_params
-    @post.save
-    render :new
+    if @post.save
+      redirect_to '/posts'
+    else
+      render :new
+    end
   end
 
   def edit 
@@ -39,7 +42,7 @@ class PostsController < ApplicationController
 
   private
    def post_params
-    params.require(:post).permit(:title, :content, :date, :image)
+    params.require(:post).permit(:title, :content, :date, :image1, :image2, :image3, :image4, :image5)
   end
 
   def check_if_admin
