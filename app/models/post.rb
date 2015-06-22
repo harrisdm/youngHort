@@ -6,6 +6,7 @@
 #  title   :string
 #  content :text
 #  date    :date
+#  image   :text
 #
 
 class Post < ActiveRecord::Base
