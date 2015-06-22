@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20150622011721) do
     t.text     "place_of_study"
     t.text     "course_of_study"
     t.integer  "user_id"
-    t.boolean  "admin",           default: true
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.boolean  "admin",           default: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -21,6 +21,29 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+
+<%#  Add the fields to populate the profile table %>
+<%= f.fields_for :profile do |profile_form| %>
+  <div class="field">
+    <%= profile_form.label :name %><br />
+    <%= profile_form.text_field :name  %>
+  </div>
+  <div class="field">
+    <%= profile_form.label :age %><br />
+    <%= profile_form.number_field :age  %>
+  </div>
+  <div class="field">
+    <%= profile_form.label :place_of_study %><br />
+    <%= profile_form.text_field :place_of_study  %>
+  </div>
+  <div class="field">
+    <%= profile_form.label :course_of_study %><br />
+    <%= profile_form.text_field :course_of_study  %>
+  </div>
+<% end %>
+
+
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

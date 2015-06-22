@@ -7,7 +7,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.text      :place_of_study
       t.text      :course_of_study
       t.integer   :user_id
-      t.boolean   :admin,         :default => true
+      t.boolean   :admin,         :default => false
 
       t.timestamps null: false
     end
