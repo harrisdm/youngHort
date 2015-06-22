@@ -1,0 +1,19 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+
+<div>Name: <%= @user.profile.name %></div>
+<div>Age: <%= @user.profile.age %></div>
+<div>Studying at: <%= @user.profile.place_of_study %></div>
+<div>Course: <%= @user.profile.course_of_study %></div>
+<div>Image: <%= @user.profile.image %></div>
+
+<%# Inline calling for the profile image %>
+<%= cl_image_tag(@user.profile.image, :alt => "Profile Image", :width => 90, :height => 90, :crop => :fill, :gravity => :face) %>
+
+<%# Helper code to get sized image or return a default image %>
+<%= fetch_profile_image(@user.profile.image) %>
+
+<div><%= link_to "Delete Image", profile_delete_img_path, method: :delete %></div>
+<div><%= link_to "Edit", profile_edit_path %></div>
+
