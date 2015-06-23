@@ -2,9 +2,15 @@
   <h1> We are Younghort </h1>
 </div>
 
-<div id="imageSlider">
+<div>
   <h1>Enter slideshow</h1>
+  <div id="imageSlider">
+    <% @slides.each do |slide| %>
+      <div><%= cl_image_tag(slide.image, :alt => "Slide") %></div>
+    <% end %>
+  </div>
 </div>
+
 <div id="homePageInfoWrapper">
   <div class="homePageInfo sm-col-12 md-col-12 lg-col-3">
     <img src="" alt="">
@@ -71,3 +77,7 @@
 
 </fieldset>
 </form>
+
+
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.min.js"></script>

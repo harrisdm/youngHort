@@ -19,7 +19,7 @@ class SlideshowImagesController < ApplicationController
       render :new
     else
       # Generate the unique cloudinary filename from the helper
-      filename = view_context.g_cloudinary_filename(file)
+      filename = g_cloudinary_filename(file)
 
       # Upload the file to Cloudinary with the path and filename
       cl_info = Cloudinary::Uploader.upload(file, :public_id => "youngHort/slideshow/#{filename}")
