@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'cloudinary'
+gem 'mandrill-api'
     
 group :development do
   gem 'pry-rails'
