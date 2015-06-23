@@ -14,10 +14,35 @@
  *= require_self
  */
 
+ *{
+  box-sizing: border-box;
+ }
+
  #container{ 
   margin:0 auto;
  }
 
- #nav{
-  text-align: center; 
+ #header{
+  margin: 0 auto;
  }
+
+ #nav{
+  margin: 0 auto;
+  text-align: center; 
+  li{
+    display: inline-block;
+    margin: 10px;
+    transition: 0.5s;
+  }
+  a{
+    text-decoration: none;
+  }
+  li:hover{
+    font-size: 1.2em;
+  }
+ }
+
+ input:focus, textarea:focus{
+  outline: 0;
+ }
+

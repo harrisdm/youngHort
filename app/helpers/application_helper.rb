@@ -30,6 +30,7 @@ module ApplicationHelper
     end
   end
 
+
   def fetch_profile_image(image)
     if image.blank?
       return image_tag("http://heatherchristenaschmidt.files.wordpress.com/2011/09/facebook_no_profile_pic2-jpg.gif", size: "90x90", alt: "Profile Image")
@@ -38,4 +39,37 @@ module ApplicationHelper
     end
   end
 
+
+  def fetch_slidshow_image_thumb(image)
+    if image.blank?
+      return image_tag("http://heatherchristenaschmidt.files.wordpress.com/2011/09/facebook_no_profile_pic2-jpg.gif", size: "90x90", alt: "Profile Image")
+    else
+      return cl_image_tag(image, :alt => "Slidshow Image", :width => 200, :height => 100, :crop => :thumb)
+    end
+  end
+
+  # def self.g_cloudinary_filename( file )
+  #   require 'securerandom'
+  #   rand = SecureRandom.urlsafe_base64(5)
+  #   filename = file.original_filename.split(".").tap(&:pop).join
+  #   return filename + "_" + rand
+  # end
+
+  def g_cloudinary_filename(file)
+    require 'securerandom'
+    rand = SecureRandom.urlsafe_base64(5)
+    filename = file.original_filename.split(".").tap(&:pop).join
+    return filename + "_" + rand
+  end
+
 end
+
+
+
+
+
+
+
+
+
+
