@@ -21,7 +21,7 @@ module ApplicationHelper
     end
   end
 
-  # Supply a defualt profile image if one is not supplied
+  # Supply a default profile image if one is not supplied
   def profile_image_link(source)
     if source.image.blank?
       return "http://heatherchristenaschmidt.files.wordpress.com/2011/09/facebook_no_profile_pic2-jpg.gif" 
