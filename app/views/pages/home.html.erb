@@ -8,40 +8,47 @@
 <legend>Contact Us</legend>
 
 <br>
-<!-- Text input-->
+
+<!-- everyfield is required or else email will not be sent through -->
+<!-- name input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="name">Your Name *</label>  
+  <label class="col-md-4 control-label" for="name"> Name * </label>  
   <div class="col-md-5">
   <input id="name" name="name" type="text" placeholder="Enter your name here" class="form-control input-md" required="true">
-    
   </div>
 </div>
-
 <br>
-<!-- Text input-->
+
+<!-- title input -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="email">Your Email * </label>  
+  <label for="title"> Title * </label>
+  <input id="title" name="title" type="text" placeholder="subject of your query" required="true">
+</div>
+<br>
+
+<!-- email input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="email"> Email Address * </label>  
   <div class="col-md-5">
   <input id="email" name="email" type="text" placeholder="Enter your email address here" class="form-control input-md" required="true">
-    
   </div>
 </div>
-
 <br>
+
 <!-- Textarea -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="msg">Your Message * </label>
+  <label class="col-md-4 control-label" for="message">Your Message * </label>
   <div class="col-md-4">                     
-    <textarea class="form-control" id="msg" name="msg" cols="20" rows="5" placeholder="Enter your message here" require="true"></textarea>
+    <textarea class="form-control" id="message" name="message" cols="20" rows="5" placeholder="Enter your message here" required="true"></textarea>
   </div>
 </div>
-
 <br>
+
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="submit"></label>
   <div class="col-md-4">
-    <button id="submit" name="submit" class="btn btn-primary">Send Message</button>
+    <button id="submit" name="submit" class="btn btn-primary"> Submit </button>
   </div>
 </div>
 

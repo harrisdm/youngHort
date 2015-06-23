@@ -1,0 +1,30 @@
+<h1>SlideshowImages#index</h1>
+<p>Find me in app/views/slideshow_images/index.html.erb</p>
+
+<table>
+  <tr>
+    <th>Image</th>
+    <th>Description</th>
+    <th>Active</th>
+    <th>Links</th>
+  </tr>
+
+  <% @images.each do |image| %>
+  <tr>
+    <td><%= fetch_slidshow_image_thumb(image.image) %></td>
+    <td><%= image.description %></td>
+    <td><%= image.active %></td>
+    <td>
+      <%= link_to "Enable", enable_slideshow_image_path(image.id), method: :patch if image.active == false %>
+      <%= link_to "Disable", disable_slideshow_image_path(image.id), method: :patch  if image.active %>
+      <%= link_to "Delete", slideshow_image_path(image.id), method: :delete  %>
+    </td>
+  </tr>
+  <% end %>
+
+</table>
+
+<%= link_to "Add Image", new_slideshow_image_path %>
+
+
+

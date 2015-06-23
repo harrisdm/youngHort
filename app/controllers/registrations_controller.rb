@@ -2,8 +2,11 @@ class RegistrationsController < Devise::RegistrationsController
  
   def new
     build_resource({})
+    #create the user
     self.resource.profile = Profile.new
+    #create a new profile with user nested profile
     respond_with self.resource
+    #link to itself
   end
 
   def create

@@ -1,3 +1,5 @@
+// mailer form 
+
 $(document).ready(function() {
 
 jQuery(function($)
@@ -6,7 +8,8 @@ jQuery(function($)
     {
         var email = $("#email").val(); // get email field value
         var name = $("#name").val(); // get name field value
-        var msg = $("#msg").val(); // get message field value
+        var title = $("#title").val(); //get title field value
+        var message = $("#message").val(); // get message field value   
         $.ajax(
         {
             type: "POST",
@@ -19,25 +22,26 @@ jQuery(function($)
                     'headers': {
                         'Reply-To': email
                     },
-                    'subject': 'YoungHort Form Submission',
-                    'text': msg,
+                    'subject': title,
+                    'text': message,
                     'to': [
                     {
-                        'email': 'kate@younghort.com.au',
-                        'name': 'kate',
+                        'email': 'stella.halena@gmail.com',
+                        'name': 'stella',
                         'type': 'to'
                     }]
                 }
             }
         })
         .done(function(response) {
-            alert('Your message has been sent. Thank you!'); // show success message
-            $("#name").val(''); // reset field after successful submission
-            $("#email").val(''); // reset field after successful submission
-            $("#msg").val(''); // reset field after successful submission
+            alert("Thank you! Your message has been sent. We will get back to you as soon as we can "); // show success message
+            $("#email").val(''); // reset email field after successful submission
+            $("#name").val(''); // reset name field after successful submission
+            $("#title").val(''); // reset title field after sucessfull submission
+            $("#message").val(''); // reset message field after successful submission
         })
         .fail(function(response) {
-            alert('Error sending message.');
+            alert("There's a problem sending your message. Please try again.");
         });
         return false; // prevent page refresh
     });

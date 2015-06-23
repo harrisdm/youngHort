@@ -30,6 +30,10 @@
 Rails.application.routes.draw do
 
   
+resources :slideshow_images, only: [:index, :new, :create, :destroy]
+patch   '/slideshow_images/disable/:id'  =>   'slideshow_images#disable',   as: 'disable_slideshow_image'
+patch   '/slideshow_images/enable/:id'   =>   'slideshow_images#enable',    as: 'enable_slideshow_image'
+
 resources :posts
 resources :mentors
 resources :ambassadors
