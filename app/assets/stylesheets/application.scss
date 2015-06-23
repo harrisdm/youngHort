@@ -10,6 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require froala_editor.min.css
+ *= require froala_style.min.css
  *= require_tree .
  *= require_self
  */
@@ -28,6 +30,7 @@
  }
 
  #nav{
+  vertical-align: top;
   margin: 0 auto;
   text-align: right; 
   background-color: papayawhip ;
@@ -44,6 +47,14 @@
     color: black;
   }
  }
+
+ #logo{
+  vertical-align: top;
+  display: inline-block;
+  width: 300px;
+  height: 50px;
+ }
+
  input:focus, textarea:focus{
   outline: 0;
  }

@@ -23,7 +23,7 @@
   </div>
   <div>
     <%= f.label :bio %>
-    <div><%= f.text_field :bio %></div>
+    <div><%= f.text_area :bio, :id => "postContent" %></div>
   </div>
   <div>
     <%= f.label :image %>
@@ -34,3 +34,9 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<!-- <script>
+  $(function(){
+    $('#postContent').editable({inlineMode: false})
+  });
+</script> -->

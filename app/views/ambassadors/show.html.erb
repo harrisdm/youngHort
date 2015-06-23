@@ -1,6 +1,5 @@
 <h1>Ambassadors</h1>
 
-
 <div>
   <%= fetch_profile_image_model(@ambassador) %>
 </div>
@@ -17,5 +16,5 @@
 
 <% if current_user.profile.admin? %>
   <%= link_to('Edit', edit_ambassador_path) %>
-  <%= link_to('Delete', ambassador_path, :method => :delete, data: {confirm: 'Are you sure you want to delete this mentor?'}) %>
+  <%= link_to('Delete', ambassador_path, :method => :delete, data: {confirm: 'Are you sure you want to delete this ambassador?'}) %>
 <% end %>

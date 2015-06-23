@@ -6,23 +6,31 @@
 
 
 <%= form_for @ambassador do |f| %>
+
   <div>
     <%= f.label :name %>
-    <div><%= f.text_field :name%></div>
+    <div><%= f.text_field :name %></div>
   </div>
   <div>
     <%= f.label :location %>
-    <div><%= f.text_field :location%></div>
+    <div><%= f.text_field :location %></div>
   </div>
   <div>
     <%= f.label :bio %>
-    <div><%= f.text_field :bio%></div>
+    <div><%= f.text_area :bio, :id => "postContent" %></div>
   </div>
   <div>
     <%= f.label :image %>
-    <div><%= f.file_field :image%></div>
+    <div><%= f.file_field :image %></div>
   </div>
   <div>
     <%= f.submit %>
   </div>
+
 <% end %>
+
+<!-- <script>
+  $(function(){
+    $('#postContent').editable({inlineMode: false})
+  });
+</script> -->

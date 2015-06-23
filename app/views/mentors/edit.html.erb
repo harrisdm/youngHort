@@ -19,6 +19,10 @@
     <div><%= f.text_area :bio %></div>
   </div>
   <div>
+    <%= m.label :bio %>
+    <div><%= m.text_area :bio, :id => "postContent" %></div>
+  </div>
+  <div>
     <%= f.label :image %>
     <div><%= f.file_field :image %></div>
   </div>
@@ -26,3 +30,9 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<!-- <script>
+  $(function(){
+    $('#postContent').editable({inlineMode: false})
+  });
+</script> -->
