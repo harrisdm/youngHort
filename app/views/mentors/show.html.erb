@@ -10,7 +10,7 @@
   <%= image_tag(@mentor.image) %>
 </div>
 <div>
-  Link: <%= @mentor.link %>
+  Link: <%=link_to('website', 'http://' + @mentor.link) %>
 <div>
   <%= @mentor.bio %>
 </div>
