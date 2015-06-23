@@ -15,23 +15,13 @@ class AmbassadorsController < ApplicationController
   end
 
   def create
-     @ambassador = Ambassador.new ambassador_params
+    @ambassador = Ambassador.new ambassador_params
     if @ambassador.save
       # Get the file name from the submitted form
       file = params[:ambassador][:image]
 
-      unless file.blank?
-        # Upload the file to Cloudinary with the path and filename
-        cl_info = Cloudinary::Uploader.upload(file, :public_id => "youngHort/ambassadors/#{@ambassador.id}")
+      save_cloudinary_AMP_image(file, @ambassador, "youngHort/ambassadors/")
 
-        if cl_info
-          # Upload successful: add image to the database with the Cloudinary ID
-          @ambassador.image = cl_info['public_id']
-          @ambassador.version = cl_info['version']
-          @ambassador.save
-        end
-
-      end
       redirect_to @ambassador
     else
       render :new
@@ -50,40 +40,39 @@ class AmbassadorsController < ApplicationController
       # Get the file name from the submitted form
       file = params[:ambassador][:image]
 
-      unless file.blank?
-        # Upload the file to Cloudinary with the path and filename
-        cl_info = Cloudinary::Uploader.upload(file, :public_id => "youngHort/ambassadors/#{@ambassador.id}")
-
-        if cl_info
-          # Upload successful: add image to the database with the Cloudinary ID
-          @ambassador.image = cl_info['public_id']
-          @ambassador.version = cl_info['version']
-          @ambassador.save
-        end
-
-      end
+      save_cloudinary_AMP_image(file, @ambassador, "youngHort/ambassadors/")
+      
       redirect_to @ambassador
     else
       render :edit
     end
   end
 
+  def delete_img
+    ambassador = Ambassador.find params[:id]
+    delete_cloudinary_AMP_image(ambassador, "youngHort/ambassadors/")
+    redirect_to ambassador
+  end
+
   def destroy
     @ambassador = Ambassador.find params[:id]
+    delete_cloudinary_AMP_image(@ambassador, "youngHort/ambassadors/")
     @ambassador.destroy
     redirect_to ambassadors_path
   end
 
-  def delete_img
-    ambassador = Ambassador.find params[:id]
-    Cloudinary::Api.delete_resources(["youngHort/ambassadors/#{ ambassador.id }"])
-    ambassador.image = nil
-    ambassador.save
-    redirect_to ambassador
-  end
 
   private
     def ambassador_params
-      params.require(:ambassador).permit(:name, :location, :context, :image)
+      params.require(:ambassador).permit(:name, :location, :bio)
     end
+
   end
+
+
+
+
+
+
+
+

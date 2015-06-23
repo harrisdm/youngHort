@@ -62,12 +62,12 @@ module ApplicationHelper
   #   return filename + "_" + rand
   # end
 
-  def g_cloudinary_filename(file)
-    require 'securerandom'
-    rand = SecureRandom.urlsafe_base64(5)
-    filename = file.original_filename.split(".").tap(&:pop).join
-    return filename + "_" + rand
-  end
+  # def g_cloudinary_filename(file)
+  #   require 'securerandom'
+  #   rand = SecureRandom.urlsafe_base64(5)
+  #   filename = file.original_filename.split(".").tap(&:pop).join
+  #   return filename + "_" + rand
+  # end
 
 end
 
