@@ -6,6 +6,10 @@ class MentorsController < ApplicationController
     @mentors = Mentor.order(created_at: :desc)
   end
 
+  def show
+    @mentor = Mentor.find params[:id]
+  end
+
   def new
     @mentor = Mentor.new
   end
@@ -64,10 +68,6 @@ class MentorsController < ApplicationController
     end
   end
 
-  def show
-    @mentor = Mentor.find params[:id]
-  end
-
   def destroy
     @mentor = Mentor.find params[:id]
     @mentor.destroy
@@ -83,7 +83,7 @@ class MentorsController < ApplicationController
   end
 
   private
-  def mentor_params
-    params.require(:mentor).permit(:name, :bio, :link)
+    def mentor_params
+      params.require(:mentor).permit(:name, :bio, :link)
+    end
   end
-end
