@@ -4,6 +4,7 @@ class CreateProfiles < ActiveRecord::Migration
 
       t.string    :name
       t.integer   :age
+      t.string    :image
       t.text      :place_of_study
       t.text      :course_of_study
       t.integer   :user_id
