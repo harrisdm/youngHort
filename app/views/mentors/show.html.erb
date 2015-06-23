@@ -1,16 +1,23 @@
 <h1> show mentor page </h1>
-<% if current_user.profile.admin? %>
-  <%= link_to('Edit', edit_mentor_path) %>
-  <%= link_to('Delete', mentor_path, :method => :delete, data: {confirm: 'Are you sure you want to delete this mentor?'}) %>
-<% end %>
+
+
+<div>
+  <%# image_tag(@mentor.image) %>
+  <%# Helper code to get sized image or return a default image %>
+  <%# fetch_profile_image(@mentor.image) %>
+  <%= fetch_profile_image_model(@mentor) %>
+</div>
 <div>
   Name: <%= @mentor.name %>
 </div>
 <div>
-  <%= image_tag(@mentor.image) %>
-</div>
-<div>
-  Link: <%=link_to('website', 'http://' + @mentor.link) %>
+  Link: <%=link_to 'website', 'http://' + @mentor.link, :target => :blank %>
 <div>
   <%= @mentor.bio %>
 </div>
+
+
+<% if current_user.profile.admin? %>
+  <%= link_to('Edit', edit_mentor_path) %>
+  <%= link_to('Delete', mentor_path, :method => :delete, data: {confirm: 'Are you sure you want to delete this mentor?'}) %>
+<% end %>
