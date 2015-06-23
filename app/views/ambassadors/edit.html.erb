@@ -6,9 +6,9 @@
 <p>Below are a list of all ambassadors submitted!</p>
 
 <%= form_for @ambassador do |f| %>
-  <%= f.string_field :name%>
-  <%= f.string_field :location%>
-  <%= f.text_field :content%>
-  <%= f.image_field :location%>
+  <%= f.text_field :name%>
+  <%= f.text_field :location%>
+  <%= f.text_field :context%>
+  <%= f.text_field :image%>
   <%= f.submit "Edit" %>
 <% end %>

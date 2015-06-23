@@ -13,9 +13,9 @@
 
 class Ambassador < ActiveRecord::Base
 
-  validates :name
-  validates :loctaion
-  validates :content
-  validates :image
+  # validates :name, presence: true
+  # validates :loctaion, presence: true
+  # validates :context, presence: true
+  # validates :image, presence: true
 
 end

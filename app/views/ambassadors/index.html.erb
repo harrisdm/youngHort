@@ -1,0 +1,10 @@
+<h1> list of all the Ambassadors </h1>
+
+<% @ambassadors.each do |a| %>
+  <div>
+    <h2>Name: <%= link_to(a.name, a) %></h2>
+  </div>
+  <div>
+    <%= image_tag(a.image) %>
+  </div>
+<% end %>

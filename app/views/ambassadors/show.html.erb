@@ -10,8 +10,8 @@
   <tr>
     <td><%= @ambassador.name %></td> 
     <td><%= @ambassador.location %></td> 
-    <td><%= @ambassador.content %></td>
-    <td><%= @ambassador.image %></td>   
+    <td><%= @ambassador.context %></td>
+    <td><%= image_tag(@ambassador.image) %></td>   
 
   </tr>
 </table>
@@ -19,5 +19,5 @@
 
 <p>
  <a href="/ambassadors/<%= @ambassador.id %>/edit">Edit</a>
- <%=  link_to 'Delete', @ambassador, :method => 'delete' %>
+ <%=  link_to( 'Delete', ambassador_path, :method => :delete, data: {confirm: "Are you sure you want to delete this ambassador"}) %>
 </p>
