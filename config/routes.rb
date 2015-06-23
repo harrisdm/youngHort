@@ -36,7 +36,7 @@ resources :mentors
   devise_for :users, controllers: { registrations: "registrations" }
   root to:  'pages#home'
 
-  resources :posts
+resources :posts
 
   get       '/profile/edit'         =>  'profiles#edit'
   patch     '/profile/'             =>  'profiles#update'
@@ -46,7 +46,7 @@ resources :mentors
   get       'pages/home'
   get       'pages/secure'
 
-  resources :ambassadors
+resources :ambassadors
 
   
 end
