@@ -9,6 +9,14 @@ module ApplicationHelper
       nav += '<li>' + link_to('New mentor', '/mentors/new')
       nav += '<li>' + link_to('All ambassadors', '/ambassadors')
       nav += '<li>' + link_to('New ambassador', '/ambassadors/new')
+    elsif current_user.present? 
+      nav += '<li>' + link_to('Home', '/')
+      nav += '<li>' + link_to('Mentors', '/mentors')
+      nav += '<li>' + link_to('Blog', '/posts')
+      nav += '<li>' + link_to("Log Out", destroy_user_session_path, method: :delete)
+    else
+      nav += '<li>' + link_to('Home', '/')
+      nav += '<li>' + link_to('Login', '/users/sign_in')
     end
   end
 
