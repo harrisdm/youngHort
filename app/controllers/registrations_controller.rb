@@ -1,4 +1,4 @@
-class RegistrationsController < Devise::RegistrationsController
+aclass RegistrationsController < Devise::RegistrationsController
  
   def new
     build_resource({})

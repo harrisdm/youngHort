@@ -1,0 +1,14 @@
+<h1>Ambassador#edit</h1>
+<p>Find me in app/views/ambassador/edit.html.erb</p>
+
+
+<h1>Ambassador</h1>
+<p>Below are a list of all ambassadors submitted!</p>
+
+<%= form_for @ambassador do |f| %>
+  <%= f.string_field :name%>
+  <%= f.string_field :location%>
+  <%= f.text_field :content%>
+  <%= f.image_field :location%>
+  <%= f.submit "Edit" %>
+<% end %>
