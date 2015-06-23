@@ -1,23 +1,28 @@
-<h1>edit all the mentors</h1>
+<h1>Edit</h1>
 
-<%= form_for @mentor do |m| %>
+
+<%= fetch_profile_image_model(@mentor) %>
+<%= link_to "Remove Image", delete_img_mentor_path, method: :delete %>
+
+
+<%= form_for @mentor do |f| %>
   <div>
-    <%= m.label :name %>
-    <%= m.text_field :name %>
+    <%= f.label :name %>
+    <div><%= f.text_field :name %></div>
   </div>
   <div>
-    <%= m.label :image %>
-    <%= m.text_field :image %>
+    <%= f.label :link %>
+    <div><%= f.text_field :link, :placeholder => "Copy and paste link" %></div>
   </div>
   <div>
-    <%= m.label :link %>
-    <%= m.text_field :link, :placeholder => "Copy and paste link" %>
+    <%= f.label :bio %>
+    <div><%= f.text_area :bio %></div>
   </div>
   <div>
-    <%= m.label :bio %>
-    <%= m.text_area :bio %>
+    <%= f.label :image %>
+    <div><%= f.file_field :image %></div>
   </div>
   <div>
-    <%= m.submit %>
+    <%= f.submit %>
   </div>
 <% end %>

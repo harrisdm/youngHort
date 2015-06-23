@@ -17,11 +17,11 @@ p2 = Profile.create(user_id: 2, name: "admin 2", age: 24, place_of_study: "N/A",
 p3 = Profile.create(user_id: 3, name: "user 1", age: 17, place_of_study: "UNSW", course_of_study: "Lawn Mowing")
 p4 = Profile.create(user_id: 4, name: "user 2", age: 18, place_of_study: "School", course_of_study: "Box Gardens")
 
-m1 = Mentor.create(name: "Martha" , link: "http://www.google.com", bio: "blah")
-m2 = Mentor.create(name: "Gretle" , link: "http://www.apple.com", bio: "blah blah")
-m3 = Mentor.create(name: "Tomlin" , link: "http://www.microsoft.com", bio: "blah blah blah")
-m4 = Mentor.create(name: "Bobby", link: "http://www.yahoo.com", bio: "blah blah blah blah")
-m5 = Mentor.create(name: "Archibald" , link: "http://www.agar.io", bio: "blah blah blah blah blah")
+m1 = Mentor.create(name: "Martha" , link: "www.google.com", bio: "blah")
+m2 = Mentor.create(name: "Gretle" , link: "www.apple.com", bio: "blah blah")
+m3 = Mentor.create(name: "Tomlin" , link: "www.microsoft.com", bio: "blah blah blah")
+m4 = Mentor.create(name: "Bobby", link: "www.yahoo.com", bio: "blah blah blah blah")
+m5 = Mentor.create(name: "Archibald" , link: "www.agar.io", bio: "blah blah blah blah blah")
 
 pst1 = Post.create(user_id: 1, title: "How cool are we", content: "This is like the most amazing site, like, evas!!")
 pst1 = Post.create(user_id: 1, title: "Post 2", content: "Post 2 content")
