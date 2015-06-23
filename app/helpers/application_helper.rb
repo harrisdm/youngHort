@@ -9,7 +9,8 @@ module ApplicationHelper
       nav += '<li>' + link_to('New mentor', '/mentors/new')
       nav += '<li>' + link_to('All ambassadors', '/ambassadors')
       nav += '<li>' + link_to('New ambassador', '/ambassadors/new')
-    elsif current_user.present? 
+    end
+    if current_user.present? 
       nav += '<li>' + link_to('Home', '/')
       nav += '<li>' + link_to('Mentors', '/mentors')
       nav += '<li>' + link_to('Blog', '/posts')
