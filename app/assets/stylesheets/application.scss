@@ -20,6 +20,7 @@
 
  #container{ 
   margin:0 auto;
+  padding: 30px;
  }
 
  #header{
@@ -28,20 +29,21 @@
 
  #nav{
   margin: 0 auto;
-  text-align: center; 
+  text-align: right; 
+  background-color: papayawhip ;
   li{
     display: inline-block;
     margin: 10px;
-    transition: 0.5s;
   }
   a{
     text-decoration: none;
+    color: black;
+    transition: 0.3s;
   }
-  li:hover{
-    font-size: 1.2em;
+  a:hover{
+    color: black;
   }
  }
-
  input:focus, textarea:focus{
   outline: 0;
  }
