@@ -1,1 +1,23 @@
 <h1>edit all the mentors</h1>
+
+<%= form_for @mentor do |m| %>
+  <div>
+    <%= m.label :name %>
+    <%= m.text_field :name %>
+  </div>
+  <div>
+    <%= m.label :image %>
+    <%= m.text_field :image %>
+  </div>
+  <div>
+    <%= m.label :link %>
+    <%= m.text_field :link, :placeholder => "Copy and paste link" %>
+  </div>
+  <div>
+    <%= m.label :bio %>
+    <%= m.text_area :bio %>
+  </div>
+  <div>
+    <%= m.submit %>
+  </div>
+<% end %>
