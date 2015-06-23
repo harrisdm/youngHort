@@ -4,30 +4,36 @@
   <title>YoungHort</title>
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= javascript_include_tag 'application'%>
+  <link href="http://d2v52k3cl9vedd.cloudfront.net/basscss/6.1.6/basscss.min.css" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%== intellinav  %>
+  <div id="wrapper" class="">
+    <div id="nav"><%== intellinav  %></div>
+    <div id="container" class="sm-col-12 md-col-8 lg-col-7">
+    
+      <%== intellinav  %>
 
-<div>
-  <% if user_signed_in? %>
-    Welcome <%= current_user.profile.name %>
-    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Sign Up", new_user_registration_path %>
-    <%= link_to "Log In", new_user_session_path %>
-  <% end %>
+      <div>
+        <% if user_signed_in? %>
+          Welcome <%= current_user.profile.name %>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign Up", new_user_registration_path %>
+          <%= link_to "Log In", new_user_session_path %>
+        <% end %>
 
-  <%= link_to "Home", root_path %>
-  <%= link_to "Blog", posts_path %>
-  <%= link_to "Mentors", mentors_path %>
-</div>
+        <%= link_to "Home", root_path %>
+        <%= link_to "Blog", posts_path %>
+        <%= link_to "Mentors", mentors_path %>
+      </div>
 
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+             <p class="notice"><%= notice %></p>
+             <p class="alert"><%= alert %></p>
 
-<%= yield %>
-
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
