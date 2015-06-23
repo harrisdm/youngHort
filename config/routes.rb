@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   
 resources :posts
 resources :mentors
+resources :ambassadors
 
   devise_for :users, controllers: { registrations: "registrations" }
   root to:  'pages#home'
@@ -46,7 +47,5 @@ resources :posts
   get       'pages/home'
   get       'pages/secure'
 
-resources :ambassadors
 
-  
 end

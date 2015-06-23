@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  before_action :authenticate_user!
   before_action :check_if_admin, except: [:index, :show]
 
   def index
@@ -43,9 +43,5 @@ class PostsController < ApplicationController
   private
    def post_params
     params.require(:post).permit(:title, :content, :date, :image1, :image2, :image3, :image4, :image5)
-  end
-
-  def check_if_admin
-    redirect_to root_path unless current_user.present? && current_user.profile.admin?
   end
 end

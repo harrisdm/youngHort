@@ -35,14 +35,17 @@ ActiveRecord::Schema.define(version: 20150622071940) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.text   "content"
-    t.date   "date"
-    t.text   "image1"
-    t.text   "image2"
-    t.text   "image3"
-    t.text   "image4"
-    t.text   "image5"
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "image1"
+    t.text     "image2"
+    t.text     "image3"
+    t.text     "image4"
+    t.text     "image5"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -54,7 +57,6 @@ ActiveRecord::Schema.define(version: 20150622071940) do
     t.boolean  "admin",           default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.string   "image"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,14 +1,15 @@
-class AmbassadorController < ApplicationController
+class AmbassadorsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_if_admin
 
-  before_action :set_screen
+  # before_action :set_screen
 
-  def set_screen 
-    @current_screen = "ambassador"
-  end
+  # def set_screen 
+  #   @current_screen = "ambassador"
+  # end
 
   def index
-    @ambassador = Ambassador.all
-
+    @ambassadors = Ambassador.all
   end
 
   def show
@@ -16,14 +17,14 @@ class AmbassadorController < ApplicationController
   end
 
   def new
-    @ambassador = ambassador.new
+    @ambassador = Ambassador.new
   end
 
   def create
      @ambassador = Ambassador.new ambassador_params
 
     if @ambassador.save
-      redirect_to root_path
+      redirect_to ambassadors_path
     
     else
       render :new
@@ -37,17 +38,16 @@ class AmbassadorController < ApplicationController
 
   def update
     @ambassador = Ambassador.find params[:id]
-    Ambassador.update ambassador_params
+    @ambassador.update ambassador_params
     redirect_to @ambassador
     #redirect to the newly edited ambassador page
   end
 
   def destroy
     @ambassador = Ambassador.find params[:id]
-    ambassador.destroy
-    redirect_to mentors_path
+    @ambassador.destroy
+    redirect_to ambassadors_path
   end
-end
 
   private
 
@@ -57,6 +57,6 @@ end
 
 
     def ambassador_params
-      params.require(:ambassador).permit(:name, :location, :content, :image)
+      params.require(:ambassador).permit(:name, :location, :context, :image)
     end
-end
+  end
