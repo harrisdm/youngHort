@@ -1,0 +1,34 @@
+<h1>Edit User Page</h1>
+
+<%= fetch_profile_image(@profile.image) %>
+
+<%= form_for @profile, url: profile_path, method: :patch, :html => { :multipart => true } do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name  %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age  %>
+  </div>
+  <div class="field">
+    <%= f.label :place_of_study %><br />
+    <%= f.text_field :place_of_study  %>
+  </div>
+  <div class="field">
+    <%= f.label :course_of_study %><br />
+    <%= f.text_field :course_of_study  %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.file_field :image  %>
+  </div>
+
+  <div class="field">
+    <%= f.hidden_field :id  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>

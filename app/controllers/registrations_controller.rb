@@ -2,7 +2,6 @@ aclass RegistrationsController < Devise::RegistrationsController
  
   def new
     build_resource({})
-    #raise params.inspect
     self.resource.profile = Profile.new
     respond_with self.resource
   end
@@ -10,6 +9,7 @@ aclass RegistrationsController < Devise::RegistrationsController
   def create
     super
   end
+ 
  
   private
  

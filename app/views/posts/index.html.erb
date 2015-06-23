@@ -1,0 +1,8 @@
+<h2>Posts</h2>
+
+<% @posts.each do |p| %>
+  <div>
+    <h2>Title: <%= link_to(p.title, p) %></h2>
+    <h2>Post:<%= p.content %></h2>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<h1> show mentor page </h1>
+<% if current_user.profile.admin? %>
+  <%= link_to('Edit', edit_mentor_path) %>
+  <%= link_to('Delete', mentor_path, :method => :delete, data: {confirm: 'Are you sure you want to delete this mentor?'}) %>
+<% end %>
+<div>
+  Name: <%= @mentor.name %>
+</div>
+<div>
+  <%= image_tag(@mentor.image) %>
+</div>
+<div>
+  Link: <%=link_to('website', 'http://' + @mentor.link) %>
+<div>
+  <%= @mentor.bio %>
+</div>
