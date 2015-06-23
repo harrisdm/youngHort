@@ -1,5 +1,7 @@
 <h1> list of all the mentors </h1>
 
+<%= link_to "Add Mentor", new_mentor_path %>
+
 <% @mentors.each do |m| %>
   <div>
     <%= fetch_profile_image_model(m) %>

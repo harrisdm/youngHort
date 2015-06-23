@@ -12,8 +12,26 @@ class MentorsController < ApplicationController
 
   def create
     @mentor = Mentor.new mentor_params
-    @mentor.save
-    redirect_to mentors_path
+    if @mentor.save
+      # Get the file name from the submitted form
+      file = params[:mentor][:image]
+
+      unless file.blank?
+        # Upload the file to Cloudinary with the path and filename
+        cl_info = Cloudinary::Uploader.upload(file, :public_id => "youngHort/mentors/#{@mentor.id}")
+
+        if cl_info
+          # Upload successful: add image to the database with the Cloudinary ID
+          @mentor.image = cl_info['public_id']
+          @mentor.version = cl_info['version']
+          @mentor.save
+        end
+
+      end
+      redirect_to @mentor
+    else
+      render :new
+    end
   end
 
   def edit
@@ -31,7 +49,7 @@ class MentorsController < ApplicationController
       unless file.blank?
         # Upload the file to Cloudinary with the path and filename
         cl_info = Cloudinary::Uploader.upload(file, :public_id => "youngHort/mentors/#{@mentor.id}")
-#raise params.inspect
+
         if cl_info
           # Upload successful: add image to the database with the Cloudinary ID
           @mentor.image = cl_info['public_id']
