@@ -24,7 +24,7 @@
   </div>
   <div class="field">
     <%= f.label :context %><br>
-    <%= f.text_field :context %>
+    <%= f.text_area :context, :id => "postContent" %>
   </div>
   <div class="field">
     <%= f.label :image %><br>
@@ -35,3 +35,9 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<!-- <script>
+  $(function(){
+    $('#postContent').editable({inlineMode: false})
+  });
+</script> -->

@@ -15,9 +15,15 @@
   </div>
   <div>
     <%= m.label :bio %>
-    <%= m.text_area :bio %>
+    <%= m.text_area :bio, :id => "postContent" %>
   </div>
   <div>
     <%= m.submit %>
   </div>
 <% end %>
+
+<!-- <script>
+  $(function(){
+    $('#postContent').editable({inlineMode: false})
+  });
+</script> -->
