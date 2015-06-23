@@ -1,4 +1,7 @@
 class MentorsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_if_admin, except: [:index, :show]
+  
   def index
     @mentors = Mentor.all
   end
