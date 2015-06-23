@@ -20,18 +20,8 @@ class MentorsController < ApplicationController
       # Get the file name from the submitted form
       file = params[:mentor][:image]
 
-      unless file.blank?
-        # Upload the file to Cloudinary with the path and filename
-        cl_info = Cloudinary::Uploader.upload(file, :public_id => "youngHort/mentors/#{@mentor.id}")
+      save_cloudinary_AMP_image(file, @mentor, "youngHort/mentors/")
 
-        if cl_info
-          # Upload successful: add image to the database with the Cloudinary ID
-          @mentor.image = cl_info['public_id']
-          @mentor.version = cl_info['version']
-          @mentor.save
-        end
-
-      end
       redirect_to @mentor
     else
       render :new
@@ -50,40 +40,31 @@ class MentorsController < ApplicationController
       # Get the file name from the submitted form
       file = params[:mentor][:image]
 
-      unless file.blank?
-        # Upload the file to Cloudinary with the path and filename
-        cl_info = Cloudinary::Uploader.upload(file, :public_id => "youngHort/mentors/#{@mentor.id}")
+      save_cloudinary_AMP_image(file, @mentor, "youngHort/mentors/")
 
-        if cl_info
-          # Upload successful: add image to the database with the Cloudinary ID
-          @mentor.image = cl_info['public_id']
-          @mentor.version = cl_info['version']
-          @mentor.save
-        end
-
-      end
       redirect_to @mentor
     else
       render :edit
     end
   end
 
+  def delete_img
+    mentor = Mentor.find params[:id]
+    delete_cloudinary_AMP_image(mentor, "youngHort/mentors/")
+    redirect_to mentor
+  end
+
   def destroy
     @mentor = Mentor.find params[:id]
+    delete_cloudinary_AMP_image(mentor, "youngHort/mentors/")
     @mentor.destroy
     redirect_to mentors_path
   end
 
-  def delete_img
-    mentor = Mentor.find params[:id]
-    Cloudinary::Api.delete_resources(["youngHort/mentors/#{ mentor.id }"])
-    mentor.image = nil
-    mentor.save
-    redirect_to mentor
-  end
 
   private
     def mentor_params
       params.require(:mentor).permit(:name, :bio, :link)
     end
+    
   end
