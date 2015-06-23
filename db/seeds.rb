@@ -28,5 +28,10 @@ pst1 = Post.create(user_id: 1, title: "Post 2", content: "Post 2 content")
 pst1 = Post.create(user_id: 2, title: "Post 3", content: "Post 3 content")
 pst1 = Post.create(user_id: 1, title: "Post 4", content: "Post 4 content")
 
+a1 = Ambassador.create(name: "Filipo", location: "Sydney", context: "blah")
+a2 = Ambassador.create(name: "Cassandra", location: "Perth", context: "blah blah")
+a3 = Ambassador.create(name: "Georgia", location: "Cairns", context: "blah blah blah")
+a4 = Ambassador.create(name: "Myrtle", location: "Newcastle", context: "blah blah blah blah")
+a5 = Ambassador.create(name: "Sebastian", location: "Darwin", context: "blah blah blah blah blah blah")
 
 
