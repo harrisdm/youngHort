@@ -27,10 +27,16 @@
   </div>
   <div>
     <%= f.label :content %>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :id => "postContent" %>
   </div>
   <div>
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+  $(function(){
+    $('#postContent').editable({inlineMode: false})
+  });
+</script>
 

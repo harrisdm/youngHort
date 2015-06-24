@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  
   def show
     @user = User.find(params[:id])
   end
@@ -10,25 +11,26 @@ class ProfilesController < ApplicationController
   def update
     profile_id = params[:profile][:id]
     profile = Profile.find(profile_id)       
-    profile.update profile_params 
+    
+    if profile.update profile_params 
 
-    # Get uploaded file and push it to Cloudinary
-    file = params[:profile][:image]
-    unless file.blank?
-      cl_info = Cloudinary::Uploader.upload(file, :public_id => "youngHort/profiles/#{ profile_id }", :unique_filename => true)
-      profile.image = cl_info['public_id']
-      profile.save
+      # Get the file name from the submitted form
+      file = params[:profile][:image]
+
+      save_cloudinary_AMP_image(file, profile, "youngHort/profiles/")
+
+      redirect_to profiles_path(current_user.id)
+    else
+      render :edit
     end
-
-    redirect_to profiles_path(current_user.id)
   end
 
   def delete_img
     profile = get_current_profile
-
-    Cloudinary::Api.delete_resources(["youngHort/profiles/#{ profile[:id] }"])
-    profile.image = nil
-    profile.save
+    delete_cloudinary_AMP_image(profile, "youngHort/profiles/")
+    # Cloudinary::Api.delete_resources(["youngHort/profiles/#{ profile[:id] }"])
+    # profile.image = nil
+    # profile.save
 
     redirect_to profiles_path(current_user.id)
   end

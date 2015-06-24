@@ -1,14 +1,36 @@
-<h1>Ambassador#edit</h1>
-<p>Find me in app/views/ambassador/edit.html.erb</p>
+<h1>Edit Ambassador</h1>
 
 
-<h1>Ambassador</h1>
-<p>Below are a list of all ambassadors submitted!</p>
+<%= fetch_profile_image_model(@ambassador) %>
+<%= link_to "Remove Image", delete_img_ambassador_path, method: :delete %>
+
 
 <%= form_for @ambassador do |f| %>
-  <%= f.text_field :name%>
-  <%= f.text_field :location%>
-  <%= f.text_field :context%>
-  <%= f.text_field :image%>
-  <%= f.submit "Edit" %>
+
+  <div>
+    <%= f.label :name %>
+    <div><%= f.text_field :name %></div>
+  </div>
+  <div>
+    <%= f.label :location %>
+    <div><%= f.text_field :location %></div>
+  </div>
+  <div>
+    <%= f.label :bio %>
+    <div><%= f.text_area :bio, :id => "postContent" %></div>
+  </div>
+  <div>
+    <%= f.label :image %>
+    <div><%= f.file_field :image %></div>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+
 <% end %>
+
+<!-- <script>
+  $(function(){
+    $('#postContent').editable({inlineMode: false})
+  });
+</script> -->

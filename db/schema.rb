@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623011037) do
+ActiveRecord::Schema.define(version: 20150623071740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,11 @@ ActiveRecord::Schema.define(version: 20150623011037) do
   create_table "ambassadors", force: :cascade do |t|
     t.string   "name"
     t.string   "location"
-    t.text     "context"
+    t.text     "bio"
     t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "version"
   end
 
   create_table "mentors", force: :cascade do |t|
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150623011037) do
     t.text     "image"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "version"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -51,12 +53,14 @@ ActiveRecord::Schema.define(version: 20150623011037) do
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
+    t.string   "image"
     t.text     "place_of_study"
     t.text     "course_of_study"
     t.integer  "user_id"
     t.boolean  "admin",           default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.string   "version"
   end
 
   create_table "slideshow_images", force: :cascade do |t|

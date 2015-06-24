@@ -36,7 +36,9 @@ patch   '/slideshow_images/enable/:id'   =>   'slideshow_images#enable',    as: 
 
 resources :posts
 resources :mentors
+delete  '/mentor/:id/delete_img'  =>  'mentors#delete_img', as: 'delete_img_mentor'
 resources :ambassadors
+delete  '/ambassador/:id/delete_img'  =>  'ambassadors#delete_img', as: 'delete_img_ambassador'
 
   devise_for :users, controllers: { registrations: "registrations" }
   root to:  'pages#home'

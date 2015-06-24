@@ -1,4 +1,5 @@
 <h2> Post </h2>
+
 <% if current_user.profile.admin? %>
   <%= link_to('Edit', edit_post_path) %>
   <%= link_to('Delete', post_path, :method => :delete, data: {confirm: 'Are you sure you want to delete this post?'}) %>
@@ -14,5 +15,6 @@
   <%= image_tag(@post.image5) %>
 </div>
 <div>
-  <%= @post.content %>
+  <%== @post.content %>
+
 </div>

@@ -1,15 +1,9 @@
 class AmbassadorsController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_if_admin
-
-  # before_action :set_screen
-
-  # def set_screen 
-  #   @current_screen = "ambassador"
-  # end
+  before_action :check_if_admin, except: [:index, :show]
 
   def index
-    @ambassadors = Ambassador.all
+    @ambassadors = Ambassador.order(created_at: :desc)
   end
 
   def show
@@ -21,11 +15,14 @@ class AmbassadorsController < ApplicationController
   end
 
   def create
-     @ambassador = Ambassador.new ambassador_params
-
+    @ambassador = Ambassador.new ambassador_params
     if @ambassador.save
-      redirect_to ambassadors_path
-    
+      # Get the file name from the submitted form
+      file = params[:ambassador][:image]
+
+      save_cloudinary_AMP_image(file, @ambassador, "youngHort/ambassadors/")
+
+      redirect_to @ambassador
     else
       render :new
     end
@@ -33,30 +30,49 @@ class AmbassadorsController < ApplicationController
 
   def edit
     @ambassador = Ambassador.find params[:id]
-    render :edit
   end
 
   def update
     @ambassador = Ambassador.find params[:id]
-    @ambassador.update ambassador_params
-    redirect_to @ambassador
-    #redirect to the newly edited ambassador page
+    
+    if @ambassador.update ambassador_params
+
+      # Get the file name from the submitted form
+      file = params[:ambassador][:image]
+
+      save_cloudinary_AMP_image(file, @ambassador, "youngHort/ambassadors/")
+      
+      redirect_to @ambassador
+    else
+      render :edit
+    end
+  end
+
+  def delete_img
+    ambassador = Ambassador.find params[:id]
+    delete_cloudinary_AMP_image(ambassador, "youngHort/ambassadors/")
+    redirect_to ambassador
   end
 
   def destroy
     @ambassador = Ambassador.find params[:id]
+    delete_cloudinary_AMP_image(@ambassador, "youngHort/ambassadors/")
     @ambassador.destroy
     redirect_to ambassadors_path
   end
 
+
   private
-
-    def set_ambassador
-      @ambassador = Ambassador.find(params[:id])
-    end
-
-
     def ambassador_params
-      params.require(:ambassador).permit(:name, :location, :context, :image)
+      params.require(:ambassador).permit(:name, :location, :bio)
     end
+
   end
+
+
+
+
+
+
+
+

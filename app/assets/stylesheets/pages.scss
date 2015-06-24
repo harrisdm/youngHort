@@ -1,0 +1,55 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media (max-width: 630px) {
+  #ambList img {
+    display: none;
+    }
+  .ambRight{
+    text-align: center;
+  }
+}
+
+#imageSlider{
+  text-align: center;
+}
+
+#homePageInfoWrapper{
+  margin:auto 0;
+  text-align: center;
+}
+
+.homePageInfo{
+  margin: 0px 20px;
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#ambTitle{
+  text-align: center;
+}
+
+#ambList{
+  .ambSection{
+    // margin-left:60px;
+  }
+
+  .ambLeft{
+    display: inline-block;
+    vertical-align: top;
+  }
+  .ambRight{
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+  }
+  img{
+    border-radius: 50%;
+    // margin: 20px;  
+  }
+  p{
+    // padding: 10px 0px;
+  }
+}
