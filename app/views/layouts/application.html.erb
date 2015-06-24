@@ -2,18 +2,22 @@
 <html>
 <head>
   <title>YoungHort</title>
-  <%= stylesheet_link_tag    'application', media: 'all'%>
-  <%= javascript_include_tag 'application'%>
+  
+  <!-- VENDOR STYLESHEETS -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.css"/>
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick-theme.css"/>
-  
+
+  <!-- IN-HOUSE STYLESHEETS -->
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+
+  <!-- IN-HOUSE JAVASCRIPT -->
+  <%= javascript_include_tag 'application'%>
+   
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container mainContentWrapper">
-    <div id="header">
+    <header>
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
           <div>
@@ -26,8 +30,9 @@
           </div>
         </div>
       </nav>
-    </div>
+    </header>
 
+<!-- Main Menu container -->
     <div id="mainMenu" class='container-fluid'>
       <div class="container">
         <div class="row  text-center">
@@ -73,12 +78,12 @@
       </div>
     </div>
 
-     <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p>
+    <!-- Flash messages -->
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
 
-      <div class="mainContent">
-        <%= yield %>
-      </div>
+    <%= yield %>
+
   </div>
   <footer class="col-md-12"></footer>
 </body>

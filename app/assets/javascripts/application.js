@@ -23,7 +23,7 @@ $(document).ready(function() {
   $('#postContent').editable({inlineMode: false});
 
   // Toggle the menu on and off
-  $( "#nav-menu-btn" ).click(function() {
+  $( "#nav-menu-btn" ).on("click", function() {
     $( "#mainMenu" ).fadeToggle( "fast", "linear" );
     if ( $( "#nav-menu-btn" ).text() == "Menu" ) {
       $( "#nav-menu-btn" ).text("Close");
@@ -34,12 +34,23 @@ $(document).ready(function() {
 
   // Slider on the home page
   $("#imageSlider").slick({
-    dots: true,
+    //dots: true,
+    arrows: false,
     infinite: true,
     slidesToShow: 1,
     adaptiveHeight: true,
     autoplay: true,
     autoplaySpeed: 2000,
+  });
+
+
+  $( ".amb-img" ).on("click", function() {
+    var id = $(this).data("content");
+    $( ".amb-intro" ).fadeOut( "fast", "linear" );
+    $( ".amb-content" ).fadeOut( "fast", "linear" );
+    setTimeout(function() {
+      $( "#"+id ).fadeIn( "fast", "linear" );
+    }, 500);
   });
 
 
