@@ -19,9 +19,20 @@
 
 $(document).ready(function() {
 
+  // Convert the textarea fields into the WYSIWYG editor
   $('#postContent').editable({inlineMode: false});
 
+  // Toggle the menu on and off
+  $( "#nav-menu-btn" ).click(function() {
+    $( "#mainMenu" ).fadeToggle( "fast", "linear" );
+    if ( $( "#nav-menu-btn" ).text() == "Menu" ) {
+      $( "#nav-menu-btn" ).text("Close");
+    } else {
+      $( "#nav-menu-btn" ).text("Menu");
+    }
+  });
 
+  // Slider on the home page
   $("#imageSlider").slick({
     dots: true,
     infinite: true,
@@ -30,5 +41,8 @@ $(document).ready(function() {
     autoplay: true,
     autoplaySpeed: 2000,
   });
+
+
+
 });
    

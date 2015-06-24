@@ -7,7 +7,7 @@
   <h1 class="text-center">Enter slideshow</h1>
   <div id="imageSlider">
     <% @slides.each do |slide| %>
-      <div><%= cl_image_tag(slide.image, :alt => "Slide") %></div>
+      <div><%= cl_image_tag(slide.image, :alt => "Slide", :height => "200px") %></div>
     <% end %>
   </div>
 </div>
