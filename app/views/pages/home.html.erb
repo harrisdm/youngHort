@@ -1,13 +1,20 @@
-<div class="text-center header">
+<% if !current_user %>
+<!--<div class="text-center header">
   <h1 class="headerTitle col-md-12"> We are Younghort </h1>
-  <h1 class="signUpButton">Sign up</h1>
-</div>
+  <h1 class="signUpButton"><%= link_to('Sign up', new_user_registration_path) %></h1>
+</div>-->
+<% end %>
 
-<div>
-  <h1 class="text-center">Enter slideshow</h1>
+
+
+<div style="position: relative;">
+  <div id="mainTitle" class="row col-xs-12">
+
+    <div class="headerTitle"> We are Younghort </div>
+  </div>
   <div id="imageSlider">
     <% @slides.each do |slide| %>
-      <div><%= cl_image_tag(slide.image, :alt => "Slide", :height => "200px") %></div>
+      <div><%= cl_image_tag(slide.image, :alt => "Slide", :width => '100%', :height => '500px') %></div>
     <% end %>
   </div>
 </div>
@@ -29,55 +36,25 @@
   </div>
   <div>
 
+  <% @ambassadors.each do |a| %>
     <div class="row top-buffer">
       <div class="ambLeft col-md-6">
-        <h2>Name</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla atque repellendus aut laboriosam et quas laborum corrupti labore sint. Pariatur iste aliquam sint accusantium at quae doloremque, deleniti obcaecati saepe.</p>
+        <h2><%= a.name %></h2>
+        <p><%= a.context %></p>
       </div>
-      <div class="col-md-6 text-center">
-        <img src="http://www.fillmurray.com/200/200" alt="" class="img-circle">
-      </div>
+      <div class="col-md-6 text-center"><%= image_tag("http://www.fillmurray.com/200/200") %></div>
     </div>
+  <% end %>
 
-        <div class="row top-buffer">
-      <div class="col-md-6">
-        <h2>Name</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla atque repellendus aut laboriosam et quas laborum corrupti labore sint. Pariatur iste aliquam sint accusantium at quae doloremque, deleniti obcaecati saepe.</p>
-      </div>
-      <div class="col-md-6 text-center">
-        <img src="http://www.fillmurray.com/200/200" alt="" class="img-circle">
-      </div>
-    </div>
-
-        <div class="row top-buffer">
-      <div class="col-md-6">
-        <h2>Name</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla atque repellendus aut laboriosam et quas laborum corrupti labore sint. Pariatur iste aliquam sint accusantium at quae doloremque, deleniti obcaecati saepe.</p>
-      </div>
-      <div class="col-md-6 text-center">
-        <img src="http://www.fillmurray.com/200/200" alt="" class="img-circle">
-      </div>
-    </div>
-
-        <div class="row top-buffer">
-      <div class="col-md-6">
-        <h2>Name</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla atque repellendus aut laboriosam et quas laborum corrupti labore sint. Pariatur iste aliquam sint accusantium at quae doloremque, deleniti obcaecati saepe.</p>
-      </div>
-      <div class="col-md-6 text-center">
-        <img src="http://www.fillmurray.com/200/200" alt="" class="img-circle">
-      </div>
-    </div>
-
-        <div class="row top-buffer">
+<!--     <div class="row top-buffer">
       <div class="ambLeft col-md-6">
         <h2>Name</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla atque repellendus aut laboriosam et quas laborum corrupti labore sint. Pariatur iste aliquam sint accusantium at quae doloremque, deleniti obcaecati saepe.</p>
       </div>
-      <div class="col-md-6 col-sm-12 text-center">
+      <div class="col-md-6 text-center">
         <img src="http://www.fillmurray.com/200/200" alt="" class="img-circle">
       </div>
-    </div>
+    </div> -->
 
   </div>
 </section>

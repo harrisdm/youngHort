@@ -12,9 +12,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="container">
+  <div class="container mainContentWrapper">
     <div id="header">
-
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
           <div>
@@ -46,16 +45,18 @@
               <li><%= link_to("Mentors", mentors_path) %></li>
             </ul>
             <hr>
+            <% if !current_user.present?  %>
             <ul class="nav nav-pills nav-stacked">
               <li><%= link_to("Log In", new_user_session_path) %></li>
               <li><%= link_to("Sign Up", new_user_registration_path) %></li>
             </ul>
+            <% end %>
 
             <% if current_user.present?  %>
             <ul class="nav nav-pills nav-stacked">
               <li><%= link_to("Edit Profile", new_user_registration_path) %></li>
               <li><%= link_to("Change Password", new_user_registration_path) %></li>
-              <li><%= link_to("Log Out", destroy_user_session_path) %></li>
+              <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
             </ul>
             <% end %>
 
@@ -75,9 +76,10 @@
      <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>
 
-      <%= yield %>
-    </div>
+      <div class="mainContent">
+        <%= yield %>
+      </div>
   </div>
-    <footer></footer>
+  <footer class="col-md-12"></footer>
 </body>
 </html>
