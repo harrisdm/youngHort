@@ -12,5 +12,23 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require froala_editor.min.js
 //= require_tree .
+
+
+$(document).ready(function() {
+
+  $('#postContent').editable({inlineMode: false});
+
+
+  $("#imageSlider").slick({
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    adaptiveHeight: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  });
+});
+   

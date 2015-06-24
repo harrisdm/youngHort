@@ -1,3 +1,5 @@
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -12,9 +14,10 @@
  *
  *= require froala_editor.min.css
  *= require froala_style.min.css
- *= require_tree .
- *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
  *{
   box-sizing: border-box;
