@@ -36,7 +36,7 @@ gem 'devise'
 gem 'cloudinary'
 gem 'mandrill-api'
 gem 'wysiwyg-rails'
-gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-sass'
     
 group :development do
   gem 'pry-rails'
