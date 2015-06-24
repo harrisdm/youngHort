@@ -1,10 +1,15 @@
 <h1> list of all the mentors </h1>
 
-<% @mentors.each do |m| %>
-  <div>
-    <h2>Name: <%= link_to(m.name, m) %></h2>
-  </div>
-  <div>
-    <%= image_tag(m.image) %>
-  </div>
-<% end %>
+<div class="mentorWrapper">
+  <% @mentors.each do |m| %>
+    <div class="mentorShow sm-col sm-col-6 md-col-5 lg-col-4">
+       <div class="mentorImage">
+          <%= image_tag(m.image) %>
+        </div>
+        <div class="mentorName">
+          <h2>Name: <%= link_to(m.name, m) %></h2>
+         </div>
+    </div>
+  <% end %>
+</div>
+

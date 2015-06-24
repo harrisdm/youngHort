@@ -1,23 +1,27 @@
-<h1>Create a mentor!</h1>
 
-<%= form_for @mentor do |m| %>
-  <div>
-    <%= m.label :name %>
-    <%= m.text_field :name %>
-  </div>
-  <div>
-    <%= m.label :image %>
-    <%= m.text_field :image %>
-  </div>
-  <div>
-    <%= m.label :link %>
-    <%= m.text_field :link, :placeholder => "Copy the link. Don't write it in" %>
-  </div>
-  <div>
-    <%= m.label :bio %>
-    <%= m.text_area :bio %>
-  </div>
-  <div>
-    <%= m.submit %>
-  </div>
-<% end %>
+
+<div class="mentor_form">
+  <h1>Create a mentor!</h1>
+
+  <%= form_for @mentor do |m| %>
+    <div>
+      <%= m.label :name %>
+      <%= m.text_field :name %>
+    </div>
+    <div>
+      <%= m.label :image %>
+      <%= m.text_field :image %>
+    </div>
+    <div>
+      <%= m.label :link %>
+      <%= m.text_field :link, :placeholder => "Copy the link. Don't write it in" %>
+    </div>
+    <div>
+      <%= m.label :bio %>
+      <%= m.text_area :bio %>
+    </div>
+    <div>
+      <%= m.submit %>
+    </div>
+  <% end %>
+</div>
