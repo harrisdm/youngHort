@@ -9,7 +9,6 @@
 
 <div style="position: relative;">
   <div id="mainTitle" class="row col-xs-12">
-
     <div class="headerTitle"> We are Younghort </div>
   </div>
   <div id="imageSlider">
@@ -37,24 +36,16 @@
   <div>
 
   <% @ambassadors.each do |a| %>
+  <% profile_image_link(a) %>
     <div class="row top-buffer">
       <div class="ambLeft col-md-6">
         <h2><%= a.name %></h2>
         <p><%= a.context %></p>
       </div>
-      <div class="col-md-6 text-center"><%= image_tag("http://www.fillmurray.com/200/200") %></div>
+      <%= %>
+      <div class="col-md-6 text-center"><%= image_tag(a.image || profile_image_link(a)) %></div>
     </div>
   <% end %>
-
-<!--     <div class="row top-buffer">
-      <div class="ambLeft col-md-6">
-        <h2>Name</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla atque repellendus aut laboriosam et quas laborum corrupti labore sint. Pariatur iste aliquam sint accusantium at quae doloremque, deleniti obcaecati saepe.</p>
-      </div>
-      <div class="col-md-6 text-center">
-        <img src="http://www.fillmurray.com/200/200" alt="" class="img-circle">
-      </div>
-    </div> -->
 
   </div>
 </section>
