@@ -41,6 +41,7 @@ $(document).ready(function() {
     adaptiveHeight: true,
     autoplay: true,
     autoplaySpeed: 2000,
+    pauseOnHover: false
   });
 
 

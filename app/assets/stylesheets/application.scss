@@ -23,20 +23,6 @@ h1,h2,h3,h4,h5,h6{
   color:rgba(81, 81, 87, 1)
 }
 
-.top-buffer {
-  margin-top: 50px;
-  }
-
-.infoCircle{
-  height: 200px;
-}
-
-.post{
-  // height:400px; this is deleted so it will adjust to post length
-  // background-color: linen;
-  padding: 30px;
-}
-
 body{
   --background-color: rgba(139, 196, 184, 1);
   --color: #b5b5b5;
@@ -55,10 +41,6 @@ body{
   border: 3px solid green;
 }
 
-// .row {
-//   margin-top: 20px;
-// }
-
 .text-content {
   text-align: justify;
   padding: 10px 25px;
@@ -68,59 +50,14 @@ body{
   display: none;
 }
 
-
-
-/******************************
-  Over-rides
-******************************/
-.slick-slider {
-  margin-bottom: 0px;
-}
-
-
-
-
-/******************************
-  Over-rides END!!!
-******************************/
-
-
 #mainTitle {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 500px;
-  text-align: center;
-  z-index: 900;
 }
 
-// .container{
+ .container{
+  max-width: 960px;
 //   box-shadow: 0px 0px 20px black;
 //   background-color: rgba(120, 180, 177, 1);
-// }
-
-.header{
-  margin-bottom: 50px;
-  background-size: 100%;
-  height: 600px;
-  padding-top: 150px;
-  background-repeat: no-repeat;
-}
-
-.headerTitle{
-  display: inline-block;
-  margin-top: 150px;
-  margin-left: 40px;
-  font-size: 4em;
-  border: 5px solid white;
-  padding: 50px;
-  background-color: rgba(0, 0, 0, .3);
-  color: white;
-}
-.headerSignup{
-  display: block;
-  text-align: center;
-}
+ }
 
 #mainMenu {
   position: fixed;
@@ -140,30 +77,10 @@ footer {
 }
 
 #imageSlider{
-      --box-shadow: 5px 0px 20px black;
-      box-shadow: 0px 5px 20px black;
+  margin-top: 50px;
+  --box-shadow: 5px 0px 20px black;
+  box-shadow: 0px 5px 20px black;
 }
-
-.col-centered {
-float: none;
-margin: 0 auto
-}
-
-#line {
-  border-top: 2px solid black;
-
-};
-
-.image {
-  padding-top: 15px;
-}
-
-
-
-
-
-
-
 
 .padded_img {
   margin: 0 7px 15px 7px;
@@ -171,6 +88,9 @@ margin: 0 auto
 
 
 
+/******************************
+  Slanting Box
+******************************/
 .slant-container {
 background: #e7e7e7;
 position: relative;
@@ -197,4 +117,98 @@ margin-top: 60px;
   position: relative;
   margin: 10px 0;
   padding: 0 20px;
-  padding-bottom: 10px;}
+  padding-bottom: 10px;
+}
+
+/******************************
+  Slanting Box - End
+******************************/
+
+
+/******************************
+  Over-rides
+******************************/
+.slick-slider {
+  margin-bottom: 0px;
+}
+
+/******************************
+  Over-rides - End
+******************************/
+
+
+/******************************
+  Not Used
+******************************/
+.top-buffer {
+  margin-top: 50px;
+  }
+
+.infoCircle{
+  height: 200px;
+}
+
+.post{
+  // height:400px; this is deleted so it will adjust to post length
+  // background-color: linen;
+  padding: 30px;
+}
+
+.col-centered {
+float: none;
+margin: 0 auto
+}
+
+#line {
+  border-top: 2px solid black;
+
+};
+
+.image {
+  padding-top: 15px;
+}
+
+.header{
+  margin-bottom: 50px;
+  background-size: 100%;
+  height: 600px;
+  padding-top: 150px;
+  background-repeat: no-repeat;
+}
+
+
+.banner-container {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  z-index: 500;
+}
+
+.banner{
+  position: absolute;
+  width: 100%;
+  padding: 20px;
+  border: 5px solid white;
+  background-color: rgba(0, 0, 0, .3);
+  font-size: 16px; font-size: 4vw;
+  text-align: center;
+  color: white;
+  top: -25%;
+  left: -50%;
+}
+
+.headerSignup{
+  display: block;
+  text-align: center;
+}
+
+/******************************
+  Not Used - End
+******************************/
+
+
+
+
+
