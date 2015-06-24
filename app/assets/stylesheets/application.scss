@@ -12,9 +12,10 @@
  *
  *= require froala_editor.min.css
  *= require froala_style.min.css
- *= require_tree .
- *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
  *{
   box-sizing: border-box;
@@ -23,6 +24,7 @@
  #container{ 
   margin:0 auto;
   padding: 30px;
+  max-width: 960px;
  }
 
  #header{

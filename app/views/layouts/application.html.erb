@@ -4,15 +4,12 @@
   <title>YoungHort</title>
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= javascript_include_tag 'application'%>
-  <link href="http://d2v52k3cl9vedd.cloudfront.net/basscss/6.1.6/basscss.min.css" rel="stylesheet">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-  <div id="wrapper" class="">
-    <div id="container" class="sm-col-12 md-col-8 lg-col-7">
+<body class="bg-blue">
+    <div id="container">
       <div id="header">
         <div id="nav">
         <div id="logo">
@@ -27,6 +24,6 @@
 
       <%= yield %>
     </div>
-  </div>
+    <footer></footer>
 </body>
 </html>
