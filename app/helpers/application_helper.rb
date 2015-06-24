@@ -30,7 +30,6 @@ module ApplicationHelper
     end
   end
 
-
   def fetch_profile_image(image)
     if image.blank?
       return image_tag("http://heatherchristenaschmidt.files.wordpress.com/2011/09/facebook_no_profile_pic2-jpg.gif", size: "90x90", alt: "Profile Image")

@@ -40,13 +40,14 @@ body{
 
 .mainContent {
   min-height: 90vh;
+  padding: 0px 40px;
 }
 
 .mainContentWrapper {
   background-color: #fcfcfc;
   margin-top: 75px;
   border-radius: 10px;
-  --z-index: 40;
+  box-shadow: 0px 0px 20px black;
 }
 
 #mainTitle {
@@ -73,8 +74,13 @@ body{
 
 .headerTitle{
   display: inline-block;
-  line-height: 500px;
-  font-size: 6em;
+  margin-top: 150px;
+  margin-left: 40px;
+  font-size: 4em;
+  border: 5px solid white;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, .3);
+  color: white;
 }
 .headerSignup{
   display: block;
@@ -87,12 +93,16 @@ body{
   height:100%;
   background-color: #ffffff;
   display: none;
-  z-index: 50;
+  z-index: 99999999;
 }
 
 footer{
   height: 200px;
   background-color:rgba(81, 81, 87, 1);
-  box-shadow: 0px 0px 20px black;
-  --margin-top: -50px;
+  margin-top: 30px;
+}
+
+#imageSlider{
+      box-shadow: 5px 0px 20px black;
+      box-shadow: 0px 5px 20px black;
 }
