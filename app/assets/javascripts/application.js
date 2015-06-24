@@ -32,17 +32,7 @@ $(document).ready(function() {
     }
   });
 
-  // Slider on the home page
-  $("#imageSlider").slick({
-    //dots: true,
-    arrows: false,
-    infinite: true,
-    slidesToShow: 1,
-    adaptiveHeight: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: false
-  });
+
 
   // Change the Ambassador display information
   $( ".amb-img" ).on("click", function() {
@@ -62,6 +52,19 @@ $(document).ready(function() {
   $('.cube').on("mouseout", function() {
     $(this).css('transform', 'rotateY(0deg)');
   });
+
+  // Flash message fading
+  setTimeout(function() {
+    $("#notice-wrapper").fadeOut("slow", function() {
+      $(this).remove;
+    })
+  }, 4000);
+
+  setTimeout(function() {
+    $("#alert-wrapper").fadeOut("slow", function() {
+      $(this).remove;
+    })
+  }, 4000);
 
 });
    
