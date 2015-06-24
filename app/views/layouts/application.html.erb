@@ -11,7 +11,8 @@
   
   <%= csrf_meta_tags %>
 </head>
-<body class="bg-blue">
+<body>
+  <div class="wrapper">
     <div class="container">
       <div class="row">
         <div id="nav">
@@ -24,10 +25,10 @@
       </div>
 
       <div id="mainMenu" class='container'>
-        <div class="sm-col sm-col-7 bg-blue">
+        <div class="sm-col sm-col-7">
           <p><%= link_to("Home", root_path) %></p>
         </div>
-        <div class="sm-col sm-col-5 bg-red">test2</div>
+        <div class="sm-col sm-col-5">test2</div>
       </div>
 
        <p class="notice"><%= notice %></p>
@@ -35,6 +36,7 @@
 
       <%= yield %>
     </div>
+  </div>
     <footer></footer>
 </body>
 </html>
