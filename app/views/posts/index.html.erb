@@ -1,8 +1,10 @@
-<h2>Posts</h2>
+<h2 class="text-center">Biggity blog cunts!</h2>
 
 <% @posts.each do |p| %>
-  <div>
+  <div class="col-md-6 text-center top-buffer post">
     <h2>Title: <%= link_to(p.title, p) %></h2>
+  </div>
+  <div class="col-md-6 text-center top-buffer post">
     <h2>Post: <%== p.content %></h2>
   </div>
 <% end %>

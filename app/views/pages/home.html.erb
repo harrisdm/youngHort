@@ -1,24 +1,23 @@
-<div id="mainHeading">
+<div class="text-center header">
   <h1> We are Younghort </h1>
 </div>
 
 <div>
-  <h1>Enter slideshow</h1>
+  <h1 class="text-center">Enter slideshow</h1>
   <div id="imageSlider">
     <% @slides.each do |slide| %>
       <div><%= cl_image_tag(slide.image, :alt => "Slide") %></div>
     <% end %>
   </div>
 </div>
-<section id="homePageInfoWrapper">
-  <div class="homePageInfo">
-    <img src="" alt="">
+<section class="row">
+  <div class="col-md-4">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In vitae unde velit, officia odio nostrum quas maiores quos ipsam ab aliquam, fugiat sit saepe quis facilis accusamus, vel libero autem!</p>
   </div>
-  <div class="homePageInfo">
+  <div class="col-md-4 img-circle bg-primary">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae adipisci iusto, reprehenderit, voluptates, qui rem assumenda ipsa, odio voluptatibus architecto obcaecati unde! Officia, nulla!</p>
   </div>
-  <div class="homePageInfo">
+  <div class="col-md-4">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa ratione veniam non neque, voluptatum quasi odit dolorum dolor maxime inventore, fugit aut qui sunt. Optio nobis nulla officiis facere.</p>
   </div>
 </section>
@@ -27,20 +26,62 @@
   <div id="ambTitle" class="">
     <h1>Our Ambassadors</h1>
   </div>
-  <div id="ambList">
+  <div>
 
-    <div class="ambSection">
-      <div class="ambLeft">
+    <div class="row top-buffer">
+      <div class="ambLeft col-md-6">
         <h2>Name</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla atque repellendus aut laboriosam et quas laborum corrupti labore sint. Pariatur iste aliquam sint accusantium at quae doloremque, deleniti obcaecati saepe.</p>
       </div>
-      <div class="ambRight">
-        <img src="http://www.fillmurray.com/200/200" alt="">
+      <div class="col-md-6 text-center">
+        <img src="http://www.fillmurray.com/200/200" alt="" class="img-circle">
+      </div>
+    </div>
+
+        <div class="row top-buffer">
+      <div class="ambLeft col-md-6">
+        <h2>Name</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla atque repellendus aut laboriosam et quas laborum corrupti labore sint. Pariatur iste aliquam sint accusantium at quae doloremque, deleniti obcaecati saepe.</p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="http://www.fillmurray.com/200/200" alt="" class="img-circle">
+      </div>
+    </div>
+
+        <div class="row top-buffer">
+      <div class="ambLeft col-md-6">
+        <h2>Name</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla atque repellendus aut laboriosam et quas laborum corrupti labore sint. Pariatur iste aliquam sint accusantium at quae doloremque, deleniti obcaecati saepe.</p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="http://www.fillmurray.com/200/200" alt="" class="img-circle">
+      </div>
+    </div>
+
+        <div class="row top-buffer">
+      <div class="ambLeft col-md-6">
+        <h2>Name</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla atque repellendus aut laboriosam et quas laborum corrupti labore sint. Pariatur iste aliquam sint accusantium at quae doloremque, deleniti obcaecati saepe.</p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="http://www.fillmurray.com/200/200" alt="" class="img-circle">
+      </div>
+    </div>
+
+        <div class="row top-buffer">
+      <div class="ambLeft col-md-6">
+        <h2>Name</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla atque repellendus aut laboriosam et quas laborum corrupti labore sint. Pariatur iste aliquam sint accusantium at quae doloremque, deleniti obcaecati saepe.</p>
+      </div>
+      <div class="col-md-6 col-sm-12 text-center">
+        <img src="http://www.fillmurray.com/200/200" alt="" class="img-circle">
       </div>
     </div>
 
   </div>
 </section>
+
+
 
 <form class="form-horizontal" id="contact_form">
 <fieldset>
@@ -62,8 +103,10 @@
 
 <!-- title input -->
 <div class="form-group">
-  <label for="title"> Title * </label>
-  <input id="title" name="title" type="text" placeholder="subject of your query" required="true">
+  <label class="col-md-4 control-label" for="title"> Title * </label>
+  <div class="col-md-5">
+  <input id="title" name="title" type="text" placeholder="subject of your query" class="form-control input-md" required="true">
+  </div>
 </div>
 <br>
 
