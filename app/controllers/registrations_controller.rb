@@ -11,6 +11,12 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     super
+
+    # Upload the profile image
+    profile = Profile.where(:user_id => current_user.id)
+    profile = profile.first
+    file = params[:user][:profile_attributes][:image]
+    save_cloudinary_AMP_image(file, profile, "youngHort/profiles/")
   end
 
 

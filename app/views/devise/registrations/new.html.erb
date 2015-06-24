@@ -25,20 +25,24 @@
 <%#  Add the fields to populate the profile table %>
 <%= f.fields_for :profile do |profile_form| %>
   <div class="field">
-    <%= profile_form.label :name %><br />
-    <%= profile_form.text_field :name  %>
+    <%= profile_form.label :name %>
+    <div><%= profile_form.text_field :name  %></div>
   </div>
   <div class="field">
-    <%= profile_form.label :age %><br />
-    <%= profile_form.number_field :age  %>
+    <%= profile_form.label :age %>
+    <div><%= profile_form.number_field :age  %></div>
   </div>
   <div class="field">
-    <%= profile_form.label :place_of_study %><br />
-    <%= profile_form.text_field :place_of_study  %>
+    <%= profile_form.label :place_of_study %>
+    <div><%= profile_form.text_field :place_of_study  %></div>
   </div>
   <div class="field">
-    <%= profile_form.label :course_of_study %><br />
-    <%= profile_form.text_field :course_of_study  %>
+    <%= profile_form.label :course_of_study %>
+    <div><%= profile_form.text_field :course_of_study  %></div>
+  </div>
+  <div>
+    <%= profile_form.label :image %>
+    <div><%= profile_form.file_field :image  %></div>
   </div>
 <% end %>
 

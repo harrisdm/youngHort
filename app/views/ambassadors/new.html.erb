@@ -1,37 +1,36 @@
-<h1>Ambassador#new</h1>
-<p>Find me in app/views/ambassador/new.html.erb</p>
+<h1>Create an Ambassador!</h1>
+
+<% if @ambassador.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@ambassador.errors.count, "error") %> prohibited this ambassador from being saved:</h2>
+
+    <ul>
+    <% @ambassador.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <%= form_for(@ambassador) do |f| %>
-  <% if @ambassador.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@ambassador.errors.count, "error") %> prohibited this ambassador from being saved:</h2>
-
-      <ul>
-      <% @ambassador.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div>
+    <%= f.label :name %>
+    <div><%= f.text_field :name %></div>
   </div>
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
+  <div>
+    <%= f.label :location %>
+    <div><%= f.text_field :location %></div>
   </div>
-  <div class="field">
-    <%= f.label :context %><br>
-    <%= f.text_area :context, :id => "postContent" %>
+  <div>
+    <%= f.label :bio %>
+    <div><%= f.text_area :bio, :id => "postContent" %></div>
   </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
+  <div>
+    <%= f.label :image %>
+    <div><%= f.file_field :image %></div>
   </div>
 
-  <div class="actions">
+  <div>
     <%= f.submit %>
   </div>
 <% end %>

@@ -1,34 +1,35 @@
 <h1>Edit User Page</h1>
 
-<%= fetch_profile_image(@profile.image) %>
+<%= fetch_profile_image_model(@profile) %>
+<%= link_to "Remove Image", profile_delete_img_path, method: :delete %>
 
-<%= form_for @profile, url: profile_path, method: :patch, :html => { :multipart => true } do |f| %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name  %>
+<%= form_for @profile, url: profile_path, method: :patch do |f| %>
+  <div>
+    <%= f.label :name %>
+    <div><%= f.text_field :name  %></div>
   </div>
-  <div class="field">
-    <%= f.label :age %><br />
-    <%= f.number_field :age  %>
+  <div>
+    <%= f.label :age %>
+    <div><%= f.number_field :age  %></div>
   </div>
-  <div class="field">
-    <%= f.label :place_of_study %><br />
-    <%= f.text_field :place_of_study  %>
+  <div>
+    <%= f.label :place_of_study %>
+    <div><%= f.text_field :place_of_study  %></div>
   </div>
-  <div class="field">
-    <%= f.label :course_of_study %><br />
-    <%= f.text_field :course_of_study  %>
+  <div>
+    <%= f.label :course_of_study %>
+    <div><%= f.text_field :course_of_study  %></div>
   </div>
-  <div class="field">
-    <%= f.label :image %><br />
-    <%= f.file_field :image  %>
+  <div>
+    <%= f.label :image %>
+    <div><%= f.file_field :image  %></div>
   </div>
 
-  <div class="field">
+  <div>
     <%= f.hidden_field :id  %>
   </div>
 
-  <div class="actions">
+  <div>
     <%= f.submit "Update" %>
   </div>
 <% end %>
