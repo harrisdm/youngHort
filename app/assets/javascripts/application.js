@@ -44,7 +44,7 @@ $(document).ready(function() {
     pauseOnHover: false
   });
 
-
+  // Change the Ambassador display information
   $( ".amb-img" ).on("click", function() {
     var id = $(this).data("content");
     $( ".amb-intro" ).fadeOut( "fast", "linear" );
@@ -55,6 +55,13 @@ $(document).ready(function() {
   });
 
 
+  // Social media cube rotation
+  $('.cube').on("mouseover", function() {
+    $(this).css('transform', 'rotateY(90deg)');
+  });
+  $('.cube').on("mouseout", function() {
+    $(this).css('transform', 'rotateY(0deg)');
+  });
 
 });
    

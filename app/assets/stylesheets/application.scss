@@ -24,7 +24,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 body{
-  --background-color: rgba(139, 196, 184, 1);
+  background-color: rgba(247, 247, 229, 1);
   --color: #b5b5b5;
   color: #000000;
 }
@@ -35,10 +35,13 @@ body{
 }
 
 .content-wrapper {
-  background-color: #fcfcfc;
+  --background-color: #fcfcfc;
   border-radius: 0 0 10px 10px;
   --box-shadow: 0px 0px 20px black;
-  border: 3px solid green;
+  border: 5px solid rgb(223,224,155);
+  padding: 0 15px 15px 15px;
+  margin: 0 auto;
+  max-width: 960px;
 }
 
 .text-content {
@@ -54,7 +57,8 @@ body{
 }
 
  .container{
-  max-width: 960px;
+  max-width: 100%;
+  background-color: #fcfcfc;
 //   box-shadow: 0px 0px 20px black;
 //   background-color: rgba(120, 180, 177, 1);
  }
@@ -84,6 +88,31 @@ footer {
 
 .padded_img {
   margin: 0 7px 15px 7px;
+}
+
+/******************************
+  Banner Positioning
+******************************/
+.banner-container {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  z-index: 500;
+}
+
+.banner{
+  position: absolute;
+  width: 100%;
+  padding: 20px;
+  border: 5px solid white;
+  background-color: rgba(0, 0, 0, .3);
+  font-size: 16px; font-size: 4vw;
+  text-align: center;
+  color: white;
+  top: -25%;
+  left: -50%;
 }
 
 
@@ -120,9 +149,58 @@ margin-top: 60px;
   padding-bottom: 10px;
 }
 
+
+
 /******************************
-  Slanting Box - End
+  Social Media Cubes
 ******************************/
+.wrap {
+  perspective: 50000px;
+  perspective-origin: 50% 40px;
+  margin-left: 100px;
+}
+
+.cube {
+  position: relative;
+  width: 80px;
+  transform-style: preserve-3d;
+  transition: all 0.3s linear;
+  margin-bottom: 80px;
+}
+
+.cube div {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 1px solid black;
+}
+
+.cube i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -12px 0px 0px -12px;
+  color: #FFF;
+  font-size: 24px;
+}
+
+.left {
+  background-color: #2D3032;
+  transform: rotateY(270deg) translateX(-40px);
+  transform-origin: center left;
+}
+
+.front {
+  background-color: #0DCBC0;
+  transform: translateZ(40px);
+}
+
+.social-menu {
+  position: fixed;
+  top: 25%;
+  right: 0;
+}
+
 
 
 /******************************
@@ -132,9 +210,6 @@ margin-top: 60px;
   margin-bottom: 0px;
 }
 
-/******************************
-  Over-rides - End
-******************************/
 
 
 /******************************
@@ -176,37 +251,10 @@ margin: 0 auto
   background-repeat: no-repeat;
 }
 
-
-.banner-container {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  top: 50%;
-  left: 50%;
-  z-index: 500;
-}
-
-.banner{
-  position: absolute;
-  width: 100%;
-  padding: 20px;
-  border: 5px solid white;
-  background-color: rgba(0, 0, 0, .3);
-  font-size: 16px; font-size: 4vw;
-  text-align: center;
-  color: white;
-  top: -25%;
-  left: -50%;
-}
-
 .headerSignup{
   display: block;
   text-align: center;
 }
-
-/******************************
-  Not Used - End
-******************************/
 
 
 
