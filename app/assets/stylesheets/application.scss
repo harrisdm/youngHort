@@ -24,12 +24,16 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .top-buffer {
-  margin-top:20px;
+  margin-top: 50px;
   }
 
+.infoCircle{
+  height: 200px;
+}
+
 .post{
-  height:400px;
-  background-color: beige;
+  // height:400px; this is deleted so it will adjust to post length
+  // background-color: linen;
   padding: 30px;
 }
 
@@ -80,6 +84,7 @@ body{
   display: block;
   text-align: center;
 }
+
 #mainMenu {
   position: fixed;
   top: 50px;
@@ -90,9 +95,19 @@ body{
   z-index: 50;
 }
 
-footer{
+footer {
   height: 200px;
   background-color:rgba(81, 81, 87, 1);
   box-shadow: 0px 0px 20px black;
-  --margin-top: -50px;
+  margin-top: 50px;
 }
+
+.col-centered {
+float: none;
+margin: 0 auto
+}
+
+#line {
+  border-top: 2px solid black;
+
+};
