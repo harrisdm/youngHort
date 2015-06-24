@@ -5,6 +5,8 @@
 </div>-->
 <% end %>
 
+<img src="images/2C868CC057D6FFA9.jpg" alt="">
+
 
 
 <div style="position: relative;">
@@ -38,12 +40,15 @@
   <% @ambassadors.each do |a| %>
   <% profile_image_link(a) %>
     <div class="row top-buffer">
-      <div class="ambLeft col-md-6">
+      <div class="amb col-md-6">
         <h2><%= a.name %></h2>
-        <p><%= a.context %></p>
+        <p><%= a.bio %></p>
       </div>
       <%= %>
-      <div class="col-md-6 text-center"><%= image_tag(a.image || profile_image_link(a)) %></div>
+      <div class="col-md-6 text-right">
+        <%# image_tag(a.image || profile_image_link(a)) %>
+        <%= fetch_profile_image_model(a) %>
+      </div>
     </div>
   <% end %>
 
