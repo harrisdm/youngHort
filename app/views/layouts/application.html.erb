@@ -23,14 +23,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <!-- Flash messages -->
 <% if notice %>
   <div id="notice-wrapper">
     <p class="notice"><%= notice %></p>
   </div>
 <% elsif alert %>
-  <<div id="alert-wrapper">
+  <div id="alert-wrapper">
     <p class="alert"><%= alert %></p>
   </div>
 <% end %>
@@ -41,8 +40,8 @@
       <div class="container-fluid">
 
         <div>
-          <a class="navbar-brand" href="#">
-            <img alt="Brand" src="...">
+          <a class="navbar-brand" href="/">
+            <%= image_tag "navLogo.png" %>
           </a>
         </div>
 
@@ -113,31 +112,33 @@
 
   <!-- Social Media -->
   <div class="social-menu">
-    <div class="wrap">
+    <a href="https://twitter.com/younghortaus"><div class="wrap">
       <div class="cube">
         <div class="front"><i class="fa fa-twitter"></i></div>
         <div class="left"><i class="fa fa-twitter"></i></div>
       </div>
-    </div>
+    </div></a>
     <br>
-    <div class="wrap">
+    <a href="https://www.facebook.com/younghortaus?fref=ts"><div class="wrap">
       <div class="cube">
         <div class="front"><i class="fa fa-facebook"></i></div>
         <div class="left"><i class="fa fa-facebook"></i></div>
       </div>
-    </div>
+    </div></a>
     <br>
-    <div class="wrap">
+    <a href="https://younghort.slack.com/"><div class="wrap">
       <div class="cube">
         <div class="front"><i class="fa fa-slack"></i></div>
         <div class="left"><i class="fa fa-slack"></i></div>
       </div>
-    </div>             
+    </div></a>           
   </div>
 
-
+<div class="content-wrapper" >
+<div class="container" >
     <%= yield %>
-
+</div> <!-- content-wrapper container -->
+</div>
 
   <footer class="col-md-12"></footer>
 
