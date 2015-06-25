@@ -42,6 +42,15 @@ $(document).ready(function() {
     autoplaySpeed: 2000,
   });
 
+
+  ////////////
+  //Tweenstuff
+  ////////////
+
+  // var baseLogo = $('#baseLogo')
+
+  // TweenLite.to(baseLogo, 2, {width:00})
+
 });
 
    

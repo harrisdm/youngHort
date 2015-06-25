@@ -23,8 +23,23 @@ h1,h2,h3,h4,h5,h6{
   color:rgba(81, 81, 87, 1)
 }
 
+#logoArea{
+  height: 400px;
+  width: 100%
+}
+
 #baseLogo{
-  background-image: url(/images)
+  position: absolute;
+  top: 30%;
+  left: 39%;
+  z-index: 1
+}
+
+#middleLeaf{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  z-index: 1;
 }
 
 .top-buffer {
