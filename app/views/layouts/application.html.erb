@@ -23,17 +23,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <!-- Flash messages -->
-<% if notice %>
-  <div id="notice-wrapper">
-    <p class="notice"><%= notice %></p>
+  <div id="wrapper">
+   <%= image_tag "middleLeafThin-01.svg", id: "leafLarge1" %>
+   <%= image_tag "middleLeafThin-01.svg", id: "leafLarge2" %>
+   <%= image_tag "middleLeafThin-01.svg", id: "leafLarge3" %>
   </div>
-<% elsif alert %>
-  <div id="alert-wrapper">
-    <p class="alert"><%= alert %></p>
-  </div>
-<% end %>
+    <!-- Flash messages -->
+  <% if notice %>
+    <div id="notice-wrapper">
+      <p class="notice"><%= notice %></p>
+    </div>
+  <% elsif alert %>
+    <div id="alert-wrapper">
+      <p class="alert"><%= alert %></p>
+    </div>
+  <% end %>
 
+<<<<<<< HEAD
   <header>
     <nav class="navbar navbar-default navbar-fixed-top">
 
@@ -97,42 +103,42 @@
           </ul>
           <% end %>
 
-        </div >
-        <div class="col-sm-5">
-          <h2>Admin</h2>
-          <ul class="nav nav-pills nav-stacked">
-            <li><%= link_to("Mentors", mentors_path) %></li>
-            <li><%= link_to("Ambassadors", ambassadors_path) %></li>
-            <li><%= link_to("Slideshow Images", slideshow_images_path) %></li>
-          </ul>
+          </div >
+          <div class="col-sm-5">
+            <h2>Admin</h2>
+            <ul class="nav nav-pills nav-stacked">
+              <li><%= link_to("Mentors", mentors_path) %></li>
+              <li><%= link_to("Ambassadors", ambassadors_path) %></li>
+              <li><%= link_to("Slideshow Images", slideshow_images_path) %></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Social Media -->
-  <div class="social-menu">
-    <a href="https://twitter.com/younghortaus"><div class="wrap">
-      <div class="cube">
-        <div class="front"><i class="fa fa-twitter"></i></div>
-        <div class="left"><i class="fa fa-twitter"></i></div>
-      </div>
-    </div></a>
-    <br>
-    <a href="https://www.facebook.com/younghortaus?fref=ts"><div class="wrap">
-      <div class="cube">
-        <div class="front"><i class="fa fa-facebook"></i></div>
-        <div class="left"><i class="fa fa-facebook"></i></div>
-      </div>
-    </div></a>
-    <br>
-    <a href="https://younghort.slack.com/"><div class="wrap">
-      <div class="cube">
-        <div class="front"><i class="fa fa-slack"></i></div>
-        <div class="left"><i class="fa fa-slack"></i></div>
-      </div>
-    </div></a>           
-  </div>
+    <!-- Social Media -->
+    <div class="social-menu">
+      <a href="https://twitter.com/younghortaus"><div class="wrap">
+        <div class="cube">
+          <div class="front"><i class="fa fa-twitter"></i></div>
+          <div class="left"><i class="fa fa-twitter"></i></div>
+        </div>
+      </div></a>
+      <br>
+      <a href="https://www.facebook.com/younghortaus?fref=ts"><div class="wrap">
+        <div class="cube">
+          <div class="front"><i class="fa fa-facebook"></i></div>
+          <div class="left"><i class="fa fa-facebook"></i></div>
+        </div>
+      </div></a>
+      <br>
+      <a href="https://younghort.slack.com/"><div class="wrap">
+        <div class="cube">
+          <div class="front"><i class="fa fa-slack"></i></div>
+          <div class="left"><i class="fa fa-slack"></i></div>
+        </div>
+      </div></a>           
+    </div>
 
 <div class="content-wrapper" >
 <div class="container" >
@@ -140,8 +146,8 @@
 </div> <!-- content-wrapper container -->
 </div>
 
-  <footer class="col-md-12"></footer>
+    <footer class="col-md-12"></footer>
 
-  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.min.js"></script>
 </body>
 </html>
