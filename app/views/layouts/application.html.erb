@@ -71,10 +71,10 @@
   </header>
 
   <!-- Main Menu container -->
-  <div id="mainMenu" class='container'>
-    <div class="container">
-      <div class="row  text-center">
-        <div class="col-sm-5 col-sm-offset-1">
+  <div id="main-menu-container">
+    <div class="row">
+      <div id="main-menu" class="col-sm-6 col-sm-offset-3 row col-xs-8 col-xs-offset-2 text-center">
+        <div class="col-sm-6">
           <h2>Menu</h2>
           <ul class="nav nav-pills nav-stacked">
             <li><%= link_to("Home", "#{root_path}#home", class: "hashlink") %></li>
@@ -101,15 +101,15 @@
           </ul>
           <% end %>
 
-          </div >
-          <div class="col-sm-5">
-            <h2>Admin</h2>
-            <ul class="nav nav-pills nav-stacked">
-              <li><%= link_to("Mentors", mentors_path) %></li>
-              <li><%= link_to("Ambassadors", ambassadors_path) %></li>
-              <li><%= link_to("Slideshow Images", slideshow_images_path) %></li>
-            </ul>
-          </div>
+        </div>
+        <div class="col-sm-6">
+          <h2>Admin</h2>
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to("Mentors", mentors_path) %></li>
+            <li><%= link_to("Ambassadors", ambassadors_path) %></li>
+            <li><%= link_to("Slideshow Images", slideshow_images_path) %></li>
+          </ul>
+
         </div>
       </div>
     </div>

@@ -24,7 +24,7 @@ $(document).ready(function() {
 
   // Toggle the menu on and off
   $( "#nav-menu-btn" ).on("click", function() {
-    $( "#mainMenu" ).fadeToggle( "fast", "linear" );
+    $( "#main-menu-container" ).fadeToggle( "fast", "linear" );
     if ( $( "#nav-menu-btn" ).text() == "Menu" ) {
       $( "#nav-menu-btn" ).text("Close");
     } else {
@@ -196,7 +196,7 @@ $(document).ready(function() {
 
 
     $(".hashlink").on("click", function() {
-      $("#mainMenu").fadeToggle( "fast", "linear" );
+      $("#main-menu-container").fadeToggle( "fast", "linear" );
       $( "#nav-menu-btn" ).text("Menu");
     });
 
