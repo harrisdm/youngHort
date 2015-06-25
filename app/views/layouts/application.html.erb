@@ -117,21 +117,21 @@
 
     <!-- Social Media -->
     <div class="social-menu">
-      <a href="https://twitter.com/younghortaus"><div class="wrap">
+      <a href="//twitter.com/younghortaus"><div class="wrap">
         <div class="cube">
           <div class="front"><i class="fa fa-twitter"></i></div>
           <div class="left"><i class="fa fa-twitter"></i></div>
         </div>
       </div></a>
       <br>
-      <a href="https://www.facebook.com/younghortaus?fref=ts"><div class="wrap">
+      <a href="//www.facebook.com/younghortaus?fref=ts"><div class="wrap">
         <div class="cube">
           <div class="front"><i class="fa fa-facebook"></i></div>
           <div class="left"><i class="fa fa-facebook"></i></div>
         </div>
       </div></a>
       <br>
-      <a href="https://younghort.slack.com/"><div class="wrap">
+      <a href="//younghort.slack.com/"><div class="wrap">
         <div class="cube">
           <div class="front"><i class="fa fa-slack"></i></div>
           <div class="left"><i class="fa fa-slack"></i></div>
@@ -145,7 +145,37 @@
 </div> <!-- content-wrapper container -->
 </div>
 
-    <footer class="col-md-12"></footer>
+<!-- footer -->
+
+    <footer class="row">
+        <div class="col-sm-6 col-md-push-3 top-buffer">
+          <ul>
+            <li class="foot-color"><%= link_to("About", "#{root_path}#about") %></li>
+            <li><%= link_to("Home", "#{root_path}#home") %></li>
+            <li><%= link_to("Ambassadors", "#{root_path}#ambassadors") %></li>
+            <li><%= link_to("Contact Us", "#{root_path}#contact") %></li>
+            <li class="foot-color">privacy policy</li>
+          </ul>
+        </div>
+        
+          <% if !current_user.present?  %>
+          <ul class="col-sm-6 col-md-3 top-buffer">
+            <li><%= link_to("Log In", new_user_session_path) %></li>
+            <li><%= link_to("Sign Up", new_user_registration_path) %></li>
+          </ul>
+          <% end %>
+
+          <% if current_user.present?  %>
+          <ul class="col-sm-6 col-md-3 top-buffer">
+            <li><%= link_to("Blog", posts_path) %></li>
+            <li><%= link_to("Mentors", mentors_path) %></li>
+            <li><%= link_to("Edit Profile", edit_user_registration_path) %></li>
+            <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
+          </ul>
+
+
+          <% end %>
+    </footer> 
 
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.min.js"></script>
 </body>
