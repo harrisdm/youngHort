@@ -48,7 +48,7 @@ jQuery(function($)
 });
 
   // Slider on the home page
-    $("#imageSlider").slick({
+  $("#imageSlider").slick({
     //dots: true,
     arrows: false,
     infinite: true,

@@ -43,7 +43,7 @@ body{
   border-radius: 0 0 10px 10px;
   --box-shadow: 0px 0px 20px black;
   border: 8px solid rgb(223,224,155);
-  padding: 0 15px 15px 15px;
+  padding: 42px 15px 15px 15px;
   margin: 0 auto;
   max-width: 960px;
 }
@@ -57,13 +57,11 @@ body{
   display: none;
 }
 
-#mainTitle {
-}
-
  .container{
   max-width: 100%;
   background-color: #fcfcfc;
   border-radius: 0 0 10px 10px;
+  min-height: 80vh;
 //   box-shadow: 0px 0px 20px black;
 //   background-color: rgba(120, 180, 177, 1);
  }
@@ -87,7 +85,7 @@ footer {
 }
 
 #imageSlider{
-  margin-top: 50px;
+  --margin-top: 50px;
   --box-shadow: 5px 0px 20px black;
   box-shadow: 0px 5px 20px black;
 }
@@ -140,7 +138,7 @@ p.notice, p.alert {
   padding: 20px;
   border: 5px solid white;
   background-color: rgba(0, 0, 0, .3);
-  font-size: 16px; font-size: 4vw;
+  font-size: 16px; font-size: 3.5vw;
   text-align: center;
   color: white;
   top: -25%;
