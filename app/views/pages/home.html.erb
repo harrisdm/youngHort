@@ -79,18 +79,25 @@
         <div class="col-xs-12"><h2>Our Ambassadors</h2></div>
       </div>
       <div class="row">
-        <div class="col-sm-6 col-sm-push-6 row">
+        <div class="col-sm-6 col-sm-push-6">
+          <div class="row amb-container">
           <% @ambassadors.each do |a| %>
             <div class="col-xs-6 col-sm-4 text-center amb-img" data-content="amb-<%= a.id %>">
-              <div class="img-border img-circle">
+              <div>
                 <%= fetch_profile_image_model(a) %>
               </div>
             </div>
           <% end %>
-            
+          </div>
         </div>
-        <div class="col-sm-6 col-sm-pull-6 text-content">
+        <div class="col-sm-6 col-sm-pull-6 text-content amb-container">
           <p class="amb-intro">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa ratione veniam non neque, voluptatum quasi odit dolorum dolor maxime inventore, fugit aut qui sunt. Optio nobis nulla officiis facere.
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa ratione veniam non neque, voluptatum quasi odit dolorum dolor maxime inventore, fugit aut qui sunt. Optio nobis nulla officiis facere.
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa ratione veniam non neque, voluptatum quasi odit dolorum dolor maxime inventore, fugit aut qui sunt. Optio nobis nulla officiis facere.
+
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa ratione veniam non neque, voluptatum quasi odit dolorum dolor maxime inventore, fugit aut qui sunt. Optio nobis nulla officiis facere.
           </p>
 
