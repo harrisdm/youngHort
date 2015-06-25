@@ -37,10 +37,10 @@ $(document).ready(function() {
   // Change the Ambassador display information
   $( ".amb-img" ).on("click", function() {
     var id = $(this).data("content");
-    $( ".amb-intro" ).fadeOut( "fast", "linear" );
-    $( ".amb-content" ).fadeOut( "fast", "linear" );
+    $( ".amb-intro" ).slideUp( "fast", "linear" );
+    $( ".amb-content" ).slideUp( "fast", "linear" );
     setTimeout(function() {
-      $( "#"+id ).fadeIn( "fast", "linear" );
+      $( "#"+id ).slideDown( "fast", "linear" );
     }, 500);
   });
 
@@ -62,7 +62,7 @@ $(document).ready(function() {
 
   // TweenLite.to(baseLogo, 2, {width:00})
 
-  // Flash message fading
+  // Flash messages fading
   setTimeout(function() {
     $("#notice-wrapper").fadeOut("slow", function() {
       $(this).remove;
