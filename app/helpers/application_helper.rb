@@ -19,7 +19,7 @@ module ApplicationHelper
 
   def fetch_profile_image_model(model)
     if model.image.blank?
-      return image_tag("http://heatherchristenaschmidt.files.wordpress.com/2011/09/facebook_no_profile_pic2-jpg.gif", size: "100x100", alt: "Profile Image", class: "img-circle padded_img")
+      return image_tag("http://heatherchristenaschmidt.files.wordpress.com/2011/09/facebook_no_profile_pic2-jpg.gif", size: "100x100", alt: "Profile Image")
     else
       return cl_image_tag(model.image, :alt => "Profile Image", :width => 100, :height => 100, :crop => :thumb, :gravity => :face, :version => model.version, :class => "img-circle padded_img")
     end
