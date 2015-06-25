@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="400px"
-	 height="400px" viewBox="0 0 400 400" style="enable-background:new 0 0 400 400;" xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="283.5px"
+	 height="283.5px" viewBox="0 0 283.5 283.5" style="enable-background:new 0 0 283.5 283.5;" xml:space="preserve">
 <style type="text/css">
 <![CDATA[
 	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#3A3A3A;}
@@ -121,43 +121,42 @@
 	.st113{fill:url(#SVGID_93_);}
 	.st114{fill:url(#SVGID_94_);}
 	.st115{fill:url(#SVGID_95_);}
-	.st116{fill:url(#SVGID_96_);}
-	.st117{display:none;}
-	.st118{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_24_);}
-	.st119{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_48_);}
-	.st120{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_72_);}
+	.st116{display:none;}
+	.st117{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_24_);}
+	.st118{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_48_);}
+	.st119{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_72_);}
+	.st120{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_96_);}
 	.st121{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_97_);}
 	.st122{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_98_);}
-	.st123{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_99_);}
-	.st124{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}
-	.st125{display:inline;fill-rule:evenodd;clip-rule:evenodd;fill:#008266;}
-	.st126{display:inline;fill-rule:evenodd;clip-rule:evenodd;fill:#026839;}
-	.st127{fill-rule:evenodd;clip-rule:evenodd;fill:#008266;}
-	.st128{fill-rule:evenodd;clip-rule:evenodd;fill:#016D39;}
-	.st129{fill-rule:evenodd;clip-rule:evenodd;fill:#026839;}
-	.st130{fill-rule:evenodd;clip-rule:evenodd;fill:#02703B;}
-	.st131{fill-rule:evenodd;clip-rule:evenodd;fill:#034119;}
-	.st132{fill-rule:evenodd;clip-rule:evenodd;fill:#03441B;}
-	.st133{fill-rule:evenodd;clip-rule:evenodd;fill:#03491F;}
-	.st134{fill-rule:evenodd;clip-rule:evenodd;fill:#035226;}
-	.st135{fill-rule:evenodd;clip-rule:evenodd;fill:#03592D;}
-	.st136{fill-rule:evenodd;clip-rule:evenodd;fill:#036334;}
-	.st137{fill-rule:evenodd;clip-rule:evenodd;fill:#038266;}
-	.st138{fill-rule:evenodd;clip-rule:evenodd;fill:#043711;}
-	.st139{fill-rule:evenodd;clip-rule:evenodd;fill:#047C3F;}
-	.st140{fill-rule:evenodd;clip-rule:evenodd;fill:#D3C64A;}
+	.st123{fill-rule:evenodd;clip-rule:evenodd;fill:#353535;}
+	.st124{display:inline;fill-rule:evenodd;clip-rule:evenodd;fill:#008266;}
+	.st125{display:inline;fill-rule:evenodd;clip-rule:evenodd;fill:#026839;}
+	.st126{fill-rule:evenodd;clip-rule:evenodd;fill:#008266;}
+	.st127{fill-rule:evenodd;clip-rule:evenodd;fill:#016D39;}
+	.st128{fill-rule:evenodd;clip-rule:evenodd;fill:#026839;}
+	.st129{fill-rule:evenodd;clip-rule:evenodd;fill:#02703B;}
+	.st130{fill-rule:evenodd;clip-rule:evenodd;fill:#034119;}
+	.st131{fill-rule:evenodd;clip-rule:evenodd;fill:#03441B;}
+	.st132{fill-rule:evenodd;clip-rule:evenodd;fill:#03491F;}
+	.st133{fill-rule:evenodd;clip-rule:evenodd;fill:#035226;}
+	.st134{fill-rule:evenodd;clip-rule:evenodd;fill:#03592D;}
+	.st135{fill-rule:evenodd;clip-rule:evenodd;fill:#036334;}
+	.st136{fill-rule:evenodd;clip-rule:evenodd;fill:#038266;}
+	.st137{fill-rule:evenodd;clip-rule:evenodd;fill:#043711;}
+	.st138{fill-rule:evenodd;clip-rule:evenodd;fill:#047C3F;}
+	.st139{fill-rule:evenodd;clip-rule:evenodd;fill:#D3C64A;}
 ]]>
 </style>
-<g id="Layer_1" class="st117">
+<g id="Layer_1" class="st116">
 </g>
 <g id="Layer_2">
 	
-		<radialGradient id="SVGID_1_" cx="143.0039" cy="255.4976" r="94.326" gradientTransform="matrix(0.8213 -0.5705 1.156 1.664 -269.7876 -88.0671)" gradientUnits="userSpaceOnUse">
+		<radialGradient id="SVGID_1_" cx="84.7363" cy="178.2524" r="94.326" gradientTransform="matrix(0.8213 -0.5705 1.156 1.664 -190.9092 -70.0183)" gradientUnits="userSpaceOnUse">
 		<stop  offset="0" style="stop-color:#004234"/>
 		<stop  offset="0.3915" style="stop-color:#00624D"/>
 		<stop  offset="0.7671" style="stop-color:#00795F"/>
 		<stop  offset="1" style="stop-color:#008266"/>
 	</radialGradient>
-	<path class="st10" d="M155.7,119c0,0-27.7,124.4,84,162C239.7,281,284.9,181.3,155.7,119z"/>
+	<path class="st10" d="M97.4,41.7c0,0-27.7,124.4,84,162C181.4,203.8,226.7,104.1,97.4,41.7z"/>
 </g>
 </svg>

@@ -54,6 +54,13 @@ $(document).ready(function() {
   });
 
 
+  ////////////
+  //Tweenstuff
+  ////////////
+
+  // var baseLogo = $('#baseLogo')
+
+  // TweenLite.to(baseLogo, 2, {width:00})
 
   // Flash message fading
   setTimeout(function() {

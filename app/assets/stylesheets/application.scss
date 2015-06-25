@@ -20,9 +20,44 @@
 @import "bootstrap";
 
 h1,h2,h3,h4,h5,h6{
-  color:rgba(81, 81, 87, 1)
+  color:rgba(81, 81, 87, 1);
 }
 
+#logoArea{
+  height: 400px;
+  width: 100%
+}
+
+#baseLogo{
+  position: absolute;
+  top: 30%;
+  left: 39%;
+  z-index: 1
+}
+
+#middleLeaf{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  z-index: 1;
+}
+
+.navbar-brand{
+  padding: 0;
+}
+
+.top-buffer {
+  margin-top: 50px;
+  }
+
+.infoCircle{
+  height: 200px;
+}
+
+.post {
+  // height:400px; this is deleted so it will adjust to post length
+  padding: 30px;
+}
 body{
   background-color: rgba(247, 247, 229, 1);
   --color: #b5b5b5;
@@ -62,6 +97,7 @@ body{
   background-color: #fcfcfc;
   border-radius: 0 0 10px 10px;
   min-height: 80vh;
+  border-bottom: 5px solid rgba(81, 81, 87, .5);
 //   box-shadow: 0px 0px 20px black;
 //   background-color: rgba(120, 180, 177, 1);
  }
@@ -87,7 +123,7 @@ footer {
 #imageSlider{
   --margin-top: 50px;
   --box-shadow: 5px 0px 20px black;
-  box-shadow: 0px 5px 20px black;
+  box-shadow: 0px 5px 10px black;
 }
 
 .padded_img {
@@ -154,7 +190,8 @@ p.notice, p.alert {
 background: #e7e7e7;
 position: relative;
 margin-top: 60px;
-
+border-radius: 0px 0px 20px 20px;
+border-bottom: 5px solid rgba(81, 81, 87, .5);
 }
 
 .slant-container:before {
@@ -177,6 +214,7 @@ margin-top: 60px;
   margin: 10px 0;
   padding: 0 20px;
   padding-bottom: 10px;
+  border-radius: 0px 20px 20px 0px;
 }
 
 
@@ -266,24 +304,10 @@ margin: 0 auto
 
 #line {
   border-top: 2px solid black;
-
 };
 
 .image {
   padding-top: 15px;
-}
-
-.header{
-  margin-bottom: 50px;
-  background-size: 100%;
-  height: 600px;
-  padding-top: 150px;
-  background-repeat: no-repeat;
-}
-
-.headerSignup{
-  display: block;
-  text-align: center;
 }
 
 
