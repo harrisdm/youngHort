@@ -82,7 +82,7 @@ $(document).ready(function() {
     onComplete: function(){
       rtl = (rtl) ? false : true;
       leafFloat1(rtl);
-    };
+    }
     });
   }
 
@@ -106,7 +106,7 @@ $(document).ready(function() {
     onComplete: function(){
       rtl = (rtl) ? false : true;
       leafFloat2(rtl);
-    };
+    }
     });
   };
 
