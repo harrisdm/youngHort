@@ -72,10 +72,6 @@ $(document).ready(function() {
       } else{
         var left = -360;
       }
-    console.log('top', top)
-    console.log('left', left)
-    console.log('rotation', rotation)
-    console.log('speed', speed)
   TweenMax.to(leafLarge1, 10 + speed, {
     // repeat: -1,
     // yoyo:true,
@@ -100,10 +96,6 @@ $(document).ready(function() {
       } else{
         var left = -360;
       }
-    console.log('top', top)
-    console.log('left', left)
-    console.log('rotation', rotation)
-    console.log('speed', speed)
   TweenMax.to(leafLarge2, 10 + speed, {
     // repeat: -1,
     // yoyo:true,
@@ -128,10 +120,6 @@ $(document).ready(function() {
       } else{
         var left = -360;
       }
-    console.log('top', top)
-    console.log('left', left)
-    console.log('rotation', rotation)
-    console.log('speed', speed)
   TweenMax.to(leafLarge3, 10 + speed, {
     // repeat: -1,
     // yoyo:true,
