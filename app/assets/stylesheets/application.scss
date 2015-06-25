@@ -122,6 +122,14 @@ p.notice, p.alert {
   line-spacing: 1px;
 }
 
+.display {
+  display: inline-block;
+}
+
+.space {
+  padding-left: 5px;
+}
+
 /******************************
   Banner Positioning
 ******************************/
@@ -245,7 +253,7 @@ margin-top: 60px;
 
 
 /******************************
-  Not Used
+  Index Blog Post & Single Post
 ******************************/
 .top-buffer {
   margin-top: 50px;
@@ -274,6 +282,11 @@ margin: 0 auto
 .image {
   padding-top: 15px;
 }
+
+
+/******************************
+  Not used
+******************************/
 
 .header{
   margin-bottom: 50px;
