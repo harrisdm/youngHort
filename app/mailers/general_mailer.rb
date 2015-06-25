@@ -1,2 +1,2 @@
-class GeneralMailer < ApplicationMailer:: Base
+class GeneralMailer < ApplicationMailer
 end
