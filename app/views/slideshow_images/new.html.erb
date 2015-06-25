@@ -1,18 +1,21 @@
-<h1>SlideshowImages#new</h1>
+<h1 class="text-center">Add new Image Slideshow</h1>
 
 <%= form_for @image do |f| %>
-  <div>
+  <div class="input-group">
     <%= f.label :image %>
     <%= f.file_field :image %>
   </div>
+
   <div>
     <%= f.label :description %>
     <%= f.text_field :description %>
   </div>
+  
   <div>
     <%= f.label :active %>
     <%= f.check_box :active, :checked => true %>
   </div>
+  
   <div>
     <%= f.submit %>
   </div>
