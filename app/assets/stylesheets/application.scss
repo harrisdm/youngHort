@@ -20,7 +20,7 @@
 @import "bootstrap";
 
 h1,h2,h3,h4,h5,h6{
-  color:rgba(81, 81, 87, 1)
+  color:rgba(81, 81, 87, 1);
 }
 
 #logoArea{
@@ -99,6 +99,7 @@ body{
   max-width: 100%;
   background-color: #fcfcfc;
   border-radius: 0 0 10px 10px;
+  border-bottom: 5px solid rgba(81, 81, 87, .5);
 //   box-shadow: 0px 0px 20px black;
 //   background-color: rgba(120, 180, 177, 1);
  }
@@ -123,8 +124,8 @@ footer {
 
 #imageSlider{
   margin-top: 50px;
-  --box-shadow: 5px 0px 20px black;
-  box-shadow: 0px 5px 20px black;
+  box-shadow: 5px 0px 10px black;
+  box-shadow: 0px 5px 10px black;
 }
 
 .padded_img {
@@ -191,7 +192,8 @@ p.notice, p.alert {
 background: #e7e7e7;
 position: relative;
 margin-top: 60px;
-
+border-radius: 0px 0px 20px 20px;
+border-bottom: 5px solid rgba(81, 81, 87, .5);
 }
 
 .slant-container:before {
@@ -214,6 +216,7 @@ margin-top: 60px;
   margin: 10px 0;
   padding: 0 20px;
   padding-bottom: 10px;
+  border-radius: 0px 20px 20px 0px;
 }
 
 

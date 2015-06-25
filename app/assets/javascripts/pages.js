@@ -26,8 +26,8 @@ jQuery(function($)
                     'text': message,
                     'to': [
                     {
-                        'email': 'stella.halena@gmail.com',
-                        'name': 'stella',
+                        'email': 'kate@younghort.com.au',
+                        'name': 'Kate',
                         'type': 'to'
                     }]
                 }
