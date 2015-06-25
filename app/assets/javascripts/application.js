@@ -23,7 +23,7 @@ $(document).ready(function() {
   $('#postContent').editable({inlineMode: false});
 
   // Toggle the menu on and off
-  $( "#nav-menu-btn" ).click(function() {
+  $( "#nav-menu-btn" ).on("click", function() {
     $( "#mainMenu" ).fadeToggle( "fast", "linear" );
     if ( $( "#nav-menu-btn" ).text() == "Menu" ) {
       $( "#nav-menu-btn" ).text("Close");
@@ -32,14 +32,25 @@ $(document).ready(function() {
     }
   });
 
-  // Slider on the home page
-  $("#imageSlider").slick({
-    dots: true,
-    infinite: true,
-    slidesToShow: 1,
-    adaptiveHeight: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
+
+
+  // Change the Ambassador display information
+  $( ".amb-img" ).on("click", function() {
+    var id = $(this).data("content");
+    $( ".amb-intro" ).fadeOut( "fast", "linear" );
+    $( ".amb-content" ).fadeOut( "fast", "linear" );
+    setTimeout(function() {
+      $( "#"+id ).fadeIn( "fast", "linear" );
+    }, 500);
+  });
+
+
+  // Social media cube rotation
+  $('.cube').on("mouseover", function() {
+    $(this).css('transform', 'rotateY(90deg)');
+  });
+  $('.cube').on("mouseout", function() {
+    $(this).css('transform', 'rotateY(0deg)');
   });
 
 
@@ -50,6 +61,48 @@ $(document).ready(function() {
   // var baseLogo = $('#baseLogo')
 
   // TweenLite.to(baseLogo, 2, {width:00})
+
+  // Flash message fading
+  setTimeout(function() {
+    $("#notice-wrapper").fadeOut("slow", function() {
+      $(this).remove;
+    })
+  }, 4000);
+
+  setTimeout(function() {
+    $("#alert-wrapper").fadeOut("slow", function() {
+      $(this).remove;
+    })
+  }, 4000);
+
+
+
+
+
+  // The function actually applying the offset
+  var offsetAnchor = function() {
+    if(location.hash.length !== 0) {
+      window.scrollTo(window.scrollX, window.scrollY - 100);
+    }
+
+
+    // This will capture hash changes while on the page
+    $(window).on("hashchange", function () {
+        offsetAnchor();
+    });
+
+    // This is here so that when you enter the page with a hash,
+    // it can provide the offset in that case too. Having a timeout
+    // seems necessary to allow the browser to jump to the anchor first.
+    window.setTimeout(function() {
+        offsetAnchor();
+    }, 1); // The delay of 1 is arbitrary and may not always work right (although it did in my testing).
+
+
+    $(".hashlink").on("click", function() {
+      $("#mainMenu").fadeToggle( "fast", "linear" );
+    });
+  };
 
 });
 

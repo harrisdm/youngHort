@@ -2,86 +2,129 @@
 <html>
 <head>
   <title>YoungHort</title>
-  <%= stylesheet_link_tag    'application', media: 'all'%>
-  <%= javascript_include_tag 'application'%>
+  
+  <!-- VENDOR STYLESHEETS -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.css"/>
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick-theme.css"/>
+
+
+  <!-- IN-HOUSE STYLESHEETS -->
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+
+  <!-- IN-HOUSE JAVASCRIPT -->
+  <%= javascript_include_tag 'application'%>
+   
+
   <!--CDN link for the latest TweenMax-->
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
   
+
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container mainContentWrapper">
-    <div id="header">
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-          <div>
-            <a class="navbar-brand" href="/">
-              <%= image_tag "navLogo.png" %>
-            </a>
-          </div>
-          <div class="text-right">
-            <button type="button" id="nav-menu-btn" class="btn btn-default navbar-btn">Menu</button>
-          </div>
-        </div>
-      </nav>
-    </div>
-
-    <div id="mainMenu" class='container-fluid'>
-      <div class="container">
-        <div class="row  text-center">
-          <div class="col-sm-5 col-sm-offset-1">
-            <h2>Menu</h2>
-            <ul class="nav nav-pills nav-stacked">
-              <li><%= link_to("Home", root_path) %></li>
-              <li><%= link_to("About", root_path) %></li>
-              <li><%= link_to("Ambassadors", root_path) %></li>
-              <li><%= link_to("Contact Us", root_path) %></li>
-            </ul>
-            <hr>
-            <ul class="nav nav-pills nav-stacked">
-              <li><%= link_to("Blog", posts_path) %></li>
-              <li><%= link_to("Mentors", mentors_path) %></li>
-            </ul>
-            <hr>
-            <% if !current_user.present?  %>
-            <ul class="nav nav-pills nav-stacked">
-              <li><%= link_to("Log In", new_user_session_path) %></li>
-              <li><%= link_to("Sign Up", new_user_registration_path) %></li>
-            </ul>
-            <% end %>
-
-            <% if current_user.present?  %>
-            <ul class="nav nav-pills nav-stacked">
-              <li><%= link_to("Edit Profile", new_user_registration_path) %></li>
-              <li><%= link_to("Change Password", new_user_registration_path) %></li>
-              <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
-            </ul>
-            <% end %>
-
-          </div >
-          <div class="col-sm-5">
-            <h2>Admin</h2>
-            <ul class="nav nav-pills nav-stacked">
-              <li><%= link_to("Mentors", mentors_path) %></li>
-              <li><%= link_to("Ambassadors", ambassadors_path) %></li>
-              <li><%= link_to("Slideshow Images", slideshow_images_path) %></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-     <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p>
-
-      <div class="mainContent">
-        <%= yield %>
-      </div>
+  <!-- Flash messages -->
+<% if notice %>
+  <div id="notice-wrapper">
+    <p class="notice"><%= notice %></p>
   </div>
+<% elsif alert %>
+  <div id="alert-wrapper">
+    <p class="alert"><%= alert %></p>
+  </div>
+<% end %>
+
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div>
+          <a class="navbar-brand" href="/">
+            <%= image_tag "navLogo.png" %>
+          </a>
+        </div>
+        <div class="text-right">
+          <button type="button" id="nav-menu-btn" class="btn btn-default navbar-btn">Menu</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Menu container -->
+  <div id="mainMenu" class='container-fluid'>
+    <div class="container">
+      <div class="row  text-center">
+        <div class="col-sm-5 col-sm-offset-1">
+          <h2>Menu</h2>
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to("Home", "#{root_path}#home", class: "hashlink") %></li>
+            <li><%= link_to("About", "#{root_path}#about", class: "hashlink") %></li>
+            <li><%= link_to("Ambassadors", "#{root_path}#ambassadors", class: "hashlink") %></li>
+            <li><%= link_to("Contact Us", "#{root_path}#contact", class: "hashlink") %></li>
+          </ul>
+          <hr>
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to("Blog", posts_path) %></li>
+            <li><%= link_to("Mentors", mentors_path) %></li>
+          </ul>
+          <hr>
+          <% if !current_user.present?  %>
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to("Log In", new_user_session_path) %></li>
+            <li><%= link_to("Sign Up", new_user_registration_path) %></li>
+          </ul>
+          <% end %>
+
+          <% if current_user.present?  %>
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to("Edit Profile", new_user_registration_path) %></li>
+            <li><%= link_to("Change Password", new_user_registration_path) %></li>
+            <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
+          </ul>
+          <% end %>
+
+        </div >
+        <div class="col-sm-5">
+          <h2>Admin</h2>
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to("Mentors", mentors_path) %></li>
+            <li><%= link_to("Ambassadors", ambassadors_path) %></li>
+            <li><%= link_to("Slideshow Images", slideshow_images_path) %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Media -->
+  <div class="social-menu">
+    <a href="https://twitter.com/younghortaus"><div class="wrap">
+      <div class="cube">
+        <div class="front"><i class="fa fa-twitter"></i></div>
+        <div class="left"><i class="fa fa-twitter"></i></div>
+      </div>
+    </div></a>
+    <br>
+    <a href="https://www.facebook.com/younghortaus?fref=ts"><div class="wrap">
+      <div class="cube">
+        <div class="front"><i class="fa fa-facebook"></i></div>
+        <div class="left"><i class="fa fa-facebook"></i></div>
+      </div>
+    </div></a>
+    <br>
+    <a href="https://younghort.slack.com/"><div class="wrap">
+      <div class="cube">
+        <div class="front"><i class="fa fa-slack"></i></div>
+        <div class="left"><i class="fa fa-slack"></i></div>
+      </div>
+    </div></a>           
+  </div>
+
+
+    <%= yield %>
+
+
   <footer class="col-md-12"></footer>
+
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.min.js"></script>
 </body>
 </html>
