@@ -58,9 +58,105 @@ $(document).ready(function() {
   //Tweenstuff
   ////////////
 
-  // var baseLogo = $('#baseLogo')
+  var leafLarge1 = $('#leafLarge1');
+  var leafLarge2 = $('#leafLarge2');
+  var leafLarge3 = $('#leafLarge3');
 
-  // TweenLite.to(baseLogo, 2, {width:00})
+  var leafFloat1 = function(rtl){
+    var speed = Math.random() * 5
+    var rotation = Math.random() * 800
+    var top = Math.random() * $('html').height();
+    leafLarge1.css('rotation',  '0deg')
+    if(rtl){
+      var left = $('html').width() + 360;
+      } else{
+        var left = -360;
+      }
+    console.log('top', top)
+    console.log('left', left)
+    console.log('rotation', rotation)
+    console.log('speed', speed)
+  TweenMax.to(leafLarge1, 10 + speed, {
+    // repeat: -1,
+    // yoyo:true,
+    ease:Sine.easeInOut,
+    left:left,
+    top: top,
+    rotation: rotation,
+    onComplete: function(){
+      rtl = (rtl) ? false : true;
+      leafFloat1(rtl);
+    }
+    });
+  }
+
+    var leafFloat2 = function(rtl){
+    var speed = Math.random() * 5
+    var rotation = Math.random() * 800
+    var top = Math.random() * $('html').height();
+    leafLarge2.css('rotation',  '0deg')
+    if(rtl){
+      var left = $('html').width() + 360;
+      } else{
+        var left = -360;
+      }
+    console.log('top', top)
+    console.log('left', left)
+    console.log('rotation', rotation)
+    console.log('speed', speed)
+  TweenMax.to(leafLarge2, 10 + speed, {
+    // repeat: -1,
+    // yoyo:true,
+    ease:Sine.easeInOut,
+    left:left,
+    top: top,
+    rotation: rotation,
+    onComplete: function(){
+      rtl = (rtl) ? false : true;
+      leafFloat2(rtl);
+    }
+    });
+  }
+
+    var leafFloat3 = function(rtl){
+    var speed = Math.random() * 5
+    var rotation = Math.random() * 800
+    var top = Math.random() * $('html').height();
+    leafLarge3.css('rotation',  '0deg')
+    if(rtl){
+      var left = $('html').width() + 360;
+      } else{
+        var left = -360;
+      }
+    console.log('top', top)
+    console.log('left', left)
+    console.log('rotation', rotation)
+    console.log('speed', speed)
+  TweenMax.to(leafLarge3, 10 + speed, {
+    // repeat: -1,
+    // yoyo:true,
+    ease:Sine.easeInOut,
+    left:left,
+    top: top,
+    rotation: rotation,
+    onComplete: function(){
+      rtl = (rtl) ? false : true;
+      leafFloat3(rtl);
+    }
+    });
+  }
+
+  leafFloat1(true);
+  leafFloat2(true);
+  leafFloat3(true);
+
+  ////////////
+  //Tweenstuff
+  ////////////
+
+  $('#wrapper').height($('html').height());
+
+
 
   // Flash messages fading
   setTimeout(function() {
