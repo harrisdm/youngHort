@@ -71,7 +71,7 @@ $(document).ready(function() {
       var left = $('html').width() + 360;
       } else{
         var left = -360;
-      }
+      };
   TweenMax.to(leafLarge1, 10 + speed, {
     // repeat: -1,
     // yoyo:true,
@@ -82,7 +82,7 @@ $(document).ready(function() {
     onComplete: function(){
       rtl = (rtl) ? false : true;
       leafFloat1(rtl);
-    }
+    };
     });
   }
 
@@ -95,7 +95,7 @@ $(document).ready(function() {
       var left = $('html').width() + 360;
       } else{
         var left = -360;
-      }
+      };
   TweenMax.to(leafLarge2, 10 + speed, {
     // repeat: -1,
     // yoyo:true,
@@ -106,9 +106,9 @@ $(document).ready(function() {
     onComplete: function(){
       rtl = (rtl) ? false : true;
       leafFloat2(rtl);
-    }
+    };
     });
-  }
+  };
 
     var leafFloat3 = function(rtl){
     var speed = Math.random() * 5
@@ -119,7 +119,7 @@ $(document).ready(function() {
       var left = $('html').width() + 360;
       } else{
         var left = -360;
-      }
+      };
   TweenMax.to(leafLarge3, 10 + speed, {
     // repeat: -1,
     // yoyo:true,
@@ -132,7 +132,7 @@ $(document).ready(function() {
       leafFloat3(rtl);
     }
     });
-  }
+  };
 
   leafFloat1(true);
   leafFloat2(true);
