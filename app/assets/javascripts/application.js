@@ -58,9 +58,45 @@ $(document).ready(function() {
   //Tweenstuff
   ////////////
 
-  // var baseLogo = $('#baseLogo')
+  var leafLarge = $('#leafLarge');
 
-  // TweenLite.to(baseLogo, 2, {width:00})
+  var leafFloat = function(rtl){
+    var speed = Math.random() * 5
+    var rotation = Math.random() * 800
+    var top = Math.random() * $('html').height();
+    leafLarge.css('rotation',  '0deg')
+    if(rtl){
+      var left = $('html').width() + 360;
+      } else{
+        var left = -360;
+      }
+    console.log('top', top)
+    console.log('left', left)
+    console.log('rotation', rotation)
+    console.log('speed', speed)
+  TweenMax.to(leafLarge, 10 + speed, {
+    // repeat: -1,
+    // yoyo:true,
+    ease:Sine.easeInOut,
+    left:left,
+    top: top,
+    rotation: rotation,
+    onComplete: function(){
+      rtl = (rtl) ? false : true;
+      leafFloat(rtl);
+    }
+    });
+  }
+
+  leafFloat(true);
+
+  ////////////
+  //Tweenstuff
+  ////////////
+
+  $('#wrapper').height($('html').height());
+
+
 
   // Flash message fading
   setTimeout(function() {
