@@ -84,9 +84,6 @@ $(document).ready(function() {
   float($('#leafLarge2'), false);
   float($('#leafLarge3'), true);
 
-
-
-
   // Flash messages: Notice
   setTimeout(function() {
     $("#notice-wrapper").fadeOut("slow", function() {
