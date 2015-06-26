@@ -86,7 +86,7 @@
         <div class="col-sm-6 col-sm-push-6">
           <div class="row amb-container">
           <% @ambassadors.each do |a| %>
-            <div class="col-xs-6 col-sm-4 text-center amb-img" data-content="amb-<%= a.id %>">
+            <div id="ambPicture" class="col-xs-6 col-sm-4 text-center amb-img" data-content="amb-<%= a.id %>">
               <div>
                 <%= fetch_profile_image_model(a) %>
               </div>
