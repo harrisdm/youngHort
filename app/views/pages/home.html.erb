@@ -5,6 +5,9 @@
 
   <div class="banner-container">
     <div class="banner">We are Younghort</div>
+    <% if !current_user %>
+    <div class="bannerSignup"><%= link_to("Join us!", new_user_registration_path) %></div>
+    <% end %>
   </div>
   
   <div id="imageSlider">

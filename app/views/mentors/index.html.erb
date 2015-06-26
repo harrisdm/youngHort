@@ -1,12 +1,35 @@
-<h1> list of all the mentors </h1>
 
-<%= link_to "Add Mentor", new_mentor_path %>
+<div class="mentorTitle">
+  <h1> list of our mentors </h1>
+</div>
 
-<% @mentors.each do |m| %>
+<hr/>
+
+<div class="mentorWrapper">
+  <% @mentors.each do |m| %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-lg-9">
+    
+        <div class="mentorBox"</div>
+          <h2><%= m.name %></h2>
+          <p><%= m.bio %></p>
+            <div class="mentorLink"</div>
+              <p><%= link_to(m.link, m) %></p>
+            </div>
+        </div>
+
+      </div>  
+        
+        <div class="col-xs-6 col-lg-3">
+          <%= image_tag(m.image) %>
+        </div>
+    
+    </div>
+    <hr />
+  <% end %>
   <div>
-    <%= fetch_profile_image_model(m) %>
-  </div>
-  <div>
-    <h2>Name: <%= link_to(m.name, m) %></h2>
-  </div>
-<% end %>
+    <%= will_paginate @mentors %>
+  </div>  
+</div>
+
+

@@ -1,33 +1,26 @@
-<h1>Create a Mentor!</h1>
 
-<%= form_for @mentor do |f| %>
-  <div>
-    <%= f.label :name %>
-    <div><%= f.text_field :name %></div>
-  </div>
-  <div>
-    <%= f.label :link %>
-    <div><%= f.text_field :link, :placeholder => "Copy the link. Don't write it in" %></div>
-  </div>
-  <div>
-    <%= f.label :bio %>
-    <div><%= f.text_area :bio %></div>
-  </div>
-  <div>
-    <%= m.label :bio %>
-    <div><%= m.text_area :bio, :id => 'postContent' %></div>
-  </div>
-  <div>
-    <%= f.label :image %>
-    <div><%= f.file_field :image %></div>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class="mentor_form">
+  <h1>Create a mentor!</h1>
 
-<!-- <script>
-  $(function(){
-    $('#postContent').editable({inlineMode: false})
-  });
-</script> -->
+  <%= form_for @mentor do |m| %>
+    <div>
+      <%= m.label :name %>
+      <%= m.text_field :name %>
+    </div>
+    <div>
+      <%= m.label :image %>
+      <%= m.text_field :image %>
+    </div>
+    <div>
+      <%= m.label :link %>
+      <%= m.text_field :link, :placeholder => "Copy the link. Don't write it in" %>
+    </div>
+    <div>
+      <%= m.label :bio %>
+      <%= m.text_area :bio %>
+    </div>
+    <div>
+      <%= m.submit %>
+    </div>
+  <% end %>
+</div>
