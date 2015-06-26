@@ -26,8 +26,8 @@ jQuery(function($)
                     'text': message,
                     'to': [
                     {
-                        'email': 'stella.halena@gmail.com',
-                        'name': 'stella',
+                        'email': 'kate@younghort.com.au',
+                        'name': 'Kate',
                         'type': 'to'
                     }]
                 }
@@ -47,7 +47,17 @@ jQuery(function($)
     });
 });
 
-
+  // Slider on the home page
+  $("#imageSlider").slick({
+    //dots: true,
+    arrows: false,
+    infinite: true,
+    slidesToShow: 1,
+    adaptiveHeight: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: false
+  });
 
 });
 

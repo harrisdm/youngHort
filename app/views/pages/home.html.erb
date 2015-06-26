@@ -1,101 +1,187 @@
-<div id="mainHeading">
-  <h1> We are Younghort </h1>
-</div>
+<% if !current_user %>
+<!--<div class="text-center header">
+  <h1 class="headerTitle col-md-12"> We are Younghort </h1>
+  <h1 class="signUpButton"><%= link_to('Sign up', new_user_registration_path) %></h1>
+</div>-->
+<% end %>
 
-<div>
-  <h1>Enter slideshow</h1>
+
+<!-- <div id="logoArea">
+<%= image_tag "baseLogo-05.svg", size: "400x400", id: "baseLogo" %>
+<%= image_tag "middleLeaf.svg", size: "100x100", id: "middleLeaf" %>
+<%= image_tag "middleLeftLeaf-05.svg", size: "80x80", id: "middleLeftLeaf-05" %>
+<%= image_tag "midRightLeaf-05.svg", size: "80x80", id: "midRightLeaf-05"  %>
+<%= image_tag "midRight2ndLeaf-05.svg", size: "70x70", id: "midRight2ndLeaf-05" %>
+<%= image_tag "middleLeft2ndLeaf-05.svg", size: "70x70", id: "midLeft2ndLeaf-05" %>
+<%= image_tag "topLeftLeaf-05.svg", size: "80x80", id: "topLeftLeaf-05", id: "topLeftLeaf-05" %>
+</div> -->
+
+
+<a name="home"></a>
+
+<!-- Image Slider -->
+<div class="row" style="position: relative;">
+
+  <div class="banner-container">
+    <div class="banner">We are Younghort</div>
+  </div>
+  
   <div id="imageSlider">
     <% @slides.each do |slide| %>
-      <div><%= cl_image_tag(slide.image, :alt => "Slide") %></div>
+      <div><%= cl_image_tag(slide.image, :alt => "Slide", :height => 400, :width => 960, :crop => :fill, :class => "img-responsive center-block") %></div>
     <% end %>
   </div>
 </div>
-<section id="homePageInfoWrapper">
-  <div class="homePageInfo">
-    <img src="" alt="">
+
+
+<!-- About Us -->
+<a name="about"></a>
+<section class=" row">
+  <div class="col-sm-4">
+    <img src="assets/youngHort.png" alt="Young Horts Logo" class="img-responsive center-block">
+  </div>
+  <div class="col-sm-8 text-content">
+    <h2>About Us</h2>
+    <p>
+      YoungHort is an Australian wide organisation run by young horticulturists, promoting horticulture as a rewarding career option in Australia.  We are aligned with YoungHort UK which has already made stellar progress in the UK to raise awareness of the importance of the Horticultural industry. We both share a common goal of inspiring and enhancing the future of the industry for young people, especially those wanting to progress into a horticultural career.
+    </p>
+    <p>
+      This Australian initiative is made up of Ambassadors, members, mentors and sponsors, that all play a key role in raising the profile and professionalism of the industry to many young enthusiastic horticulturists. Whilst maintaining and developing important links to influential groups and companies within the industry.
+    </p>
+  </div>
+</section>
+
+
+<!-- Columns of cool content -->
+<section class="row">
+  <div class="col-sm-4 text-content">
+    <a href="https://twitter.com/younghortaus"><h4 class="socialMediaLink">Twitter</h4></a>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In vitae unde velit, officia odio nostrum quas maiores quos ipsam ab aliquam, fugiat sit saepe quis facilis accusamus, vel libero autem!</p>
   </div>
-  <div class="homePageInfo">
+  <div class="col-sm-4 text-content">
+    <a href="https://www.facebook.com/younghortaus?fref=ts"><h4 class="socialMediaLink">Facebook</h4></a>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae adipisci iusto, reprehenderit, voluptates, qui rem assumenda ipsa, odio voluptatibus architecto obcaecati unde! Officia, nulla!</p>
   </div>
-  <div class="homePageInfo">
+  <div class="col-sm-4 text-content">
+    <a href="https://younghort.slack.com/"><h4 class="socialMediaLink">Slack</h4></a>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa ratione veniam non neque, voluptatum quasi odit dolorum dolor maxime inventore, fugit aut qui sunt. Optio nobis nulla officiis facere.</p>
   </div>
 </section>
 
-<section>
-  <div id="ambTitle" class="">
-    <h1>Our Ambassadors</h1>
-  </div>
-  <div id="ambList">
 
-    <div class="ambSection">
-      <div class="ambLeft">
-        <h2>Name</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla atque repellendus aut laboriosam et quas laborum corrupti labore sint. Pariatur iste aliquam sint accusantium at quae doloremque, deleniti obcaecati saepe.</p>
+<!-- Ambassador Listings -->
+<a name="ambassadors"></a>
+<section>
+  <div class="slant-container">
+    <div class="slant-content">
+
+      <div class="row">
+        <div class="col-xs-12"><h2>Our Ambassadors</h2></div>
       </div>
-      <div class="ambRight">
-        <img src="http://www.fillmurray.com/200/200" alt="">
+      <div class="row">
+        <div class="col-sm-6 col-sm-push-6">
+          <div class="row amb-container">
+          <% @ambassadors.each do |a| %>
+            <div class="col-xs-6 col-sm-4 text-center amb-img" data-content="amb-<%= a.id %>">
+              <div>
+                <%= fetch_profile_image_model(a) %>
+              </div>
+            </div>
+          <% end %>
+          </div>
+        </div>
+        <div class="col-sm-6 col-sm-pull-6 text-content amb-container">
+          <p class="amb-intro">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa ratione veniam non neque, voluptatum quasi odit dolorum dolor maxime inventore, fugit aut qui sunt. Optio nobis nulla officiis facere.
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa ratione veniam non neque, voluptatum quasi odit dolorum dolor maxime inventore, fugit aut qui sunt. Optio nobis nulla officiis facere.
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa ratione veniam non neque, voluptatum quasi odit dolorum dolor maxime inventore, fugit aut qui sunt. Optio nobis nulla officiis facere.
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa ratione veniam non neque, voluptatum quasi odit dolorum dolor maxime inventore, fugit aut qui sunt. Optio nobis nulla officiis facere.
+          </p>
+
+          <% @ambassadors.each do |a| %>
+            <div id="amb-<%= a.id %>"class="col-xs-12 text-justify amb-content">
+              <h3><%= a.name %></h3>
+              <h4><%= a.location %></h4>
+              <%= a.bio %>
+            </div>
+          <% end %>
+
+        </div>
+      </div>      
+    </div>
+  </div>
+
+</section>
+
+<section class="row">
+<a name="contact"></a>
+  <div class="col-md-4 hidden-sm">Some Image</div>
+  <div class="col-md-8">
+
+    <form class="form-horizontal" id="contact_form">
+    <fieldset>
+
+    <!-- Form Name -->
+    <h2 class="text-center">Contact Us</h2>
+
+    <!-- everyfield is required or else email will not be sent through -->
+    <!-- name input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="name"> Name * </label>  
+      <div class="col-md-5">
+      <input id="name" name="name" type="text" placeholder="Enter your name here" class="form-control input-md" required="true">
+      </div>
+    </div>
+    <br>
+
+    <!-- title input -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="title"> Title * </label>
+      <div class="col-md-5">
+      <input id="title" name="title" type="text" placeholder="Subject of your query" class="form-control input-md" required="true">
+      </div>
+    </div>
+    <br>
+
+    <!-- email input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="email"> Email Address * </label>  
+      <div class="col-md-5">
+      <input id="email" name="email" type="text" placeholder="Enter your email address here" class="form-control input-md" required="true">
+      </div>
+    </div>
+    <br>
+
+    <!-- Textarea -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="message">Your Message * </label>
+      <div class="col-md-4">                     
+        <textarea class="form-control" id="message" name="message" cols="50" rows="5" placeholder="Enter your message here" required="true"></textarea>
+      </div>
+    </div>
+    <br>
+
+    <!-- Button -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="submit"></label>
+      <div class="col-md-4">
+        <button id="submit" name="submit" class="btn btn-primary"> Submit </button>
       </div>
     </div>
 
+    </fieldset>
+    </form>
+
   </div>
+
 </section>
 
-<form class="form-horizontal" id="contact_form">
-<fieldset>
-
-<!-- Form Name -->
-<legend>Contact Us</legend>
-
-<br>
-
-<!-- everyfield is required or else email will not be sent through -->
-<!-- name input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="name"> Name * </label>  
-  <div class="col-md-5">
-  <input id="name" name="name" type="text" placeholder="Enter your name here" class="form-control input-md" required="true">
-  </div>
-</div>
-<br>
-
-<!-- title input -->
-<div class="form-group">
-  <label for="title"> Title * </label>
-  <input id="title" name="title" type="text" placeholder="subject of your query" required="true">
-</div>
-<br>
-
-<!-- email input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="email"> Email Address * </label>  
-  <div class="col-md-5">
-  <input id="email" name="email" type="text" placeholder="Enter your email address here" class="form-control input-md" required="true">
-  </div>
-</div>
-<br>
-
-<!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="message">Your Message * </label>
-  <div class="col-md-4">                     
-    <textarea class="form-control" id="message" name="message" cols="20" rows="5" placeholder="Enter your message here" required="true"></textarea>
-  </div>
-</div>
-<br>
-
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="submit"></label>
-  <div class="col-md-4">
-    <button id="submit" name="submit" class="btn btn-primary"> Submit </button>
-  </div>
-</div>
-
-</fieldset>
-</form>
 
 
 
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.min.js"></script>
+
+
+

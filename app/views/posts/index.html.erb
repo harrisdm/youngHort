@@ -1,8 +1,13 @@
-<h2>Posts</h2>
+<h2 class="text-center">Our humble a blog</h2>
+<h5 class="text-center">This is a subheading for our blog </h4> <br><br>
 
 <% @posts.each do |p| %>
-  <div>
-    <h2>Title: <%= link_to(p.title, p) %></h2>
-    <h2>Post: <%== p.content %></h2>
+
+  <div class="top-buffer">
+  
+  <div class="col-md-8 col-centered text-left post" id="line">
+    <h2>This is the title title title: <%= link_to(p.title, p) %></h2>
+    <h6>Post Begins here: <%== p.content %></h6>
   </div>
+</div>
 <% end %>

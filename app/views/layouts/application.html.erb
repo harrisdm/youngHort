@@ -2,39 +2,183 @@
 <html>
 <head>
   <title>YoungHort</title>
-  <%= stylesheet_link_tag    'application', media: 'all'%>
-  <%= javascript_include_tag 'application'%>
+  
+  <!-- VENDOR STYLESHEETS -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.css"/>
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick-theme.css"/>
+
+
+  <!-- IN-HOUSE STYLESHEETS -->
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+
+  <!-- IN-HOUSE JAVASCRIPT -->
+  <%= javascript_include_tag 'application'%>
+   
+
+  <!--CDN link for the latest TweenMax-->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
   
+
   <%= csrf_meta_tags %>
 </head>
-<body class="bg-blue">
-    <div id="container">
-      <div id="header">
-        <div id="nav">
-        <div id="logo">
-          <img src="">
-        </div>
-        <%# intellinav  %>
-        Menu
-        </div>
-      </div>
-
-      <div id="mainMenu" class='container'>
-        <div class="sm-col sm-col-7 bg-blue">
-          <p><%= link_to("Home", root_path) %></p>
-        </div>
-        <div class="sm-col sm-col-5 bg-red">test2</div>
-      </div>
-
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-
-      <%= yield %>
+<body>
+  <div id="wrapper">
+   <%= image_tag "middleLeafThin-01.svg", id: "leafLarge1" %>
+   <%= image_tag "middleLeafThin-01.svg", id: "leafLarge2" %>
+   <%= image_tag "middleLeafThin-01.svg", id: "leafLarge3" %>
+  </div>
+    <!-- Flash messages -->
+  <% if notice %>
+    <div id="notice-wrapper">
+      <p class="notice"><%= notice %></p>
     </div>
-    <footer></footer>
+  <% elsif alert %>
+    <div id="alert-wrapper">
+      <p class="alert"><%= alert %></p>
+    </div>
+  <% end %>
+  
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+
+      <div class="container-fluid">
+
+        <div>
+          <a class="navbar-brand" href="/">
+            <%= image_tag "navLogo.png" %>
+          </a>
+        </div>
+
+        <button type="button" id="nav-menu-btn"
+        class="btn btn-default navbar-btn nav-pills navbar-right">Menu</button> 
+
+          <% if current_user.present?  %>
+          <ul class="nav navbar-nav nav-pills navbar-right">
+            <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
+          </ul>
+          <% end %>
+
+          <% if !current_user.present?  %>
+          <ul class="nav navbar-nav nav-pills navbar-right">
+            <li><%= link_to("Log In", new_user_session_path) %></li>
+            <li><%= link_to("Sign Up", new_user_registration_path) %></li>
+          </ul>
+          <% end  %>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Menu container -->
+  <div id="main-menu-container">
+    <div class="row">
+      <div id="main-menu" class="col-sm-6 col-sm-offset-3 row col-xs-8 col-xs-offset-2 text-center">
+        <div class="col-sm-6">
+          <h2>Menu</h2>
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to("Home", "#{root_path}#home", class: "hashlink") %></li>
+            <li><%= link_to("About", "#{root_path}#about", class: "hashlink") %></li>
+            <li><%= link_to("Ambassadors", "#{root_path}#ambassadors", class: "hashlink") %></li>
+            <li><%= link_to("Contact Us", "#{root_path}#contact", class: "hashlink") %></li>
+          </ul>
+          <hr>
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to("Blog", posts_path) %></li>
+            <li><%= link_to("Mentors", mentors_path) %></li>
+          </ul>
+          <hr>
+          <% if !current_user.present?  %>
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to("Log In", new_user_session_path) %></li>
+            <li><%= link_to("Sign Up", new_user_registration_path) %></li>
+          </ul>
+          <% end %>
+          <% if current_user.present?  %>
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to("Edit Profile", edit_user_registration_path) %></li>
+            <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
+          </ul>
+          <% end %>
+
+        </div>
+        <div class="col-sm-6">
+          <h2>Admin</h2>
+          <ul class="nav nav-pills nav-stacked">
+            <li><%= link_to("Mentors", mentors_path) %></li>
+            <li><%= link_to("Ambassadors", ambassadors_path) %></li>
+            <li><%= link_to("Slideshow Images", slideshow_images_path) %></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Social Media -->
+    <div class="social-menu">
+      <a href="//twitter.com/younghortaus"><div class="wrap">
+        <div class="cube">
+          <div class="front"><i class="fa fa-twitter"></i></div>
+          <div class="left"><i class="fa fa-twitter"></i></div>
+        </div>
+      </div></a>
+      <br>
+      <a href="//www.facebook.com/younghortaus?fref=ts"><div class="wrap">
+        <div class="cube">
+          <div class="front"><i class="fa fa-facebook"></i></div>
+          <div class="left"><i class="fa fa-facebook"></i></div>
+        </div>
+      </div></a>
+      <br>
+      <a href="//younghort.slack.com/"><div class="wrap">
+        <div class="cube">
+          <div class="front"><i class="fa fa-slack"></i></div>
+          <div class="left"><i class="fa fa-slack"></i></div>
+        </div>
+      </div></a>           
+    </div>
+
+<div class="content-wrapper" >
+<div class="container" >
+    <%= yield %>
+</div> <!-- content-wrapper container -->
+</div>
+
+
+
+<!-- footer with content -->
+
+    <footer class="row">
+        <div class="col-sm-6 col-md-push-3 top-buffer">
+          <ul>
+            <li class="foot-color"><%= link_to("About", "#{root_path}#about") %></li>
+            <li><%= link_to("Home", "#{root_path}#home") %></li>
+            <li><%= link_to("Ambassadors", "#{root_path}#ambassadors") %></li>
+            <li><%= link_to("Contact Us", "#{root_path}#contact") %></li>
+            <li class="foot-color">privacy policy</li>
+          </ul>
+        </div>
+        
+          <% if !current_user.present?  %>
+          <ul class="col-sm-6 col-md-3 top-buffer">
+            <li><%= link_to("Log In", new_user_session_path) %></li>
+            <li><%= link_to("Sign Up", new_user_registration_path) %></li>
+          </ul>
+          <% end %>
+
+          <% if current_user.present?  %>
+          <ul class="col-sm-6 col-md-3 top-buffer">
+            <li><%= link_to("Blog", posts_path) %></li>
+            <li><%= link_to("Mentors", mentors_path) %></li>
+            <li><%= link_to("Edit Profile", edit_user_registration_path) %></li>
+            <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
+          </ul>
+
+
+          <% end %>
+    </footer> 
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.min.js"></script>
 </body>
 </html>
