@@ -5,10 +5,11 @@
 #  id         :integer          not null, primary key
 #  name       :string
 #  location   :string
-#  context    :text
+#  bio        :text
 #  image      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  version    :string
 #
 
 class Ambassador < ActiveRecord::Base
