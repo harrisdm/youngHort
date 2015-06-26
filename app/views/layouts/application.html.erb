@@ -23,11 +23,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <div id="wrapper">
    <%= image_tag "middleLeafThin-01.svg", id: "leafLarge1" %>
    <%= image_tag "middleLeafThin-01.svg", id: "leafLarge2" %>
    <%= image_tag "middleLeafThin-01.svg", id: "leafLarge3" %>
   </div>
+
+
     <!-- Flash messages -->
   <% if notice %>
     <div id="notice-wrapper">
@@ -40,7 +43,7 @@
   <% end %>
   
   <header>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <!-- <nav class="navbar navbar-default navbar-fixed-top">
 
       <div class="container-fluid">
 
@@ -67,7 +70,31 @@
           <% end  %>
 
       </div>
+    </nav> -->
+
+    <nav class="navbar">
+      <div class="col-xs-6">
+        <%= link_to((image_tag "navLogo.png"), root_path)  %>
+      </div>
+      <div class="col-xs-6 text-right">
+
+          <% if current_user.present?  %>
+          <ul class="inline-block">
+            <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
+          </ul>
+          <% end %>
+
+          <% if !current_user.present?  %>
+          <ul class="inline-block">
+            <li><%= link_to("Log In", new_user_session_path) %></li>
+            <li><%= link_to("Sign Up", new_user_registration_path) %></li>
+          </ul>
+          <% end  %>
+
+          <button type="button" id="nav-menu-btn" class="btn btn-default inline-block">Menu</button> 
+      </div>
     </nav>
+
   </header>
 
   <!-- Main Menu container -->
@@ -150,31 +177,38 @@
 <!-- footer with content -->
 
     <footer class="row">
-        <div class="col-sm-6 col-md-push-3 top-buffer">
+
+        <div class="col-sm-2 col-sm-offset-3">
           <ul>
             <li class="foot-color"><%= link_to("About", "#{root_path}#about") %></li>
             <li><%= link_to("Home", "#{root_path}#home") %></li>
             <li><%= link_to("Ambassadors", "#{root_path}#ambassadors") %></li>
             <li><%= link_to("Contact Us", "#{root_path}#contact") %></li>
-            <li class="foot-color">privacy policy</li>
+            <li><%= link_to("Blog", posts_path) %></li>
+            <li><%= link_to("Mentors", mentors_path) %></li>
           </ul>
         </div>
-        
+
+        <div class="col-sm-2">
           <% if !current_user.present?  %>
-          <ul class="col-sm-6 col-md-3 top-buffer">
+          <ul>
             <li><%= link_to("Log In", new_user_session_path) %></li>
             <li><%= link_to("Sign Up", new_user_registration_path) %></li>
           </ul>
           <% end %>
 
           <% if current_user.present?  %>
-          <ul class="col-sm-6 col-md-3 top-buffer">
-            <li><%= link_to("Blog", posts_path) %></li>
-            <li><%= link_to("Mentors", mentors_path) %></li>
+          <ul>
             <li><%= link_to("Edit Profile", edit_user_registration_path) %></li>
             <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
           </ul>
+        </div>
 
+        <div class="col-sm-2">
+          <ul>
+            <li class=""><%= link_to("Privacy Policy", "/") %></li>
+          </ul>
+        </div>
 
           <% end %>
     </footer> 
