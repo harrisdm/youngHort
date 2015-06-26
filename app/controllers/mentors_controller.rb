@@ -3,7 +3,7 @@ class MentorsController < ApplicationController
   before_action :check_if_admin, except: [:index, :show]
   
   def index
-    @mentors = Mentor.order(created_at: :desc)
+    @mentors = Mentor.order(created_at: :desc).paginate(:page => params[:page], :per_page => 3)
   end
 
   def show

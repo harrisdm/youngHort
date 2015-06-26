@@ -17,6 +17,7 @@
 //= require_tree .
 
 
+
 $(document).ready(function() {
 
   // Convert the textarea fields into the WYSIWYG editor
@@ -57,8 +58,8 @@ $(document).ready(function() {
   ////////////
   //Tweenstuff
   ////////////
-
   $('#wrapper').height($('html').height());
+
 
   var float = function(element, rtl){
     var speed = Math.random() * 5
@@ -82,9 +83,6 @@ $(document).ready(function() {
   float($('#leafLarge1'), true);
   float($('#leafLarge2'), false);
   float($('#leafLarge3'), true);
-
-
-
 
   // Flash messages: Notice
   setTimeout(function() {
@@ -128,5 +126,3 @@ $(document).ready(function() {
   });
 
 });
-
-   
