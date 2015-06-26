@@ -33,12 +33,22 @@ h1,h2,h3,h4,h5,h6{
   z-index: -1;
 }
 
-#leafLarge1, #leafLarge2, #leafLarge3{
+.leaf {
   position: absolute;
-  top:  0;
-  left: -360px;
   opacity: .1;
   z-index: -999;
+}
+#leafLarge1{
+  top:  0;
+  left: -360px;
+}
+#leafLarge2 {
+  top:  300;
+  left: -360px;
+}
+#leafLarge3 {
+  top:  800;
+  left: -360px;
 }
 
 .navbar-brand{
@@ -91,6 +101,7 @@ a:hover { text-decoration: none; }
   min-height: 80vh;
   border: 1px solid rgba(200, 200, 200, .5);
   box-shadow: 0px 0px 20px rgba(100, 100, 100, 0.8);
+  padding-bottom: 15px;
 }
 
 .text-content {
@@ -115,6 +126,9 @@ a:hover { text-decoration: none; }
 
 #main-menu {
   background-color: #ffffff;
+  padding-bottom: 15px;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid rgba(200, 200, 200, .5);
 }
 
 footer {
@@ -383,6 +397,18 @@ footer div a {
 footer div a:hover {
   color: #a2a2a2;
 }
+nav {
+  position: fixed;
+  width: 100%;
+  background: #f8f8f8;
+  border: 1px solid #e7e7e7;
+  z-index: 1030;
+}
+nav > div > * {
+  padding: 11px;
+}
 
-
+form {
+  padding-bottom: 15px;
+}
 

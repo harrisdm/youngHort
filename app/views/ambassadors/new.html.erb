@@ -1,4 +1,4 @@
-<h1>Create an Ambassador!</h1>
+<h2>Create an Ambassador</h2>
 
 <% if @ambassador.errors.any? %>
   <div id="error_explanation">
@@ -12,31 +12,29 @@
   </div>
 <% end %>
 
-<%= form_for(@ambassador) do |f| %>
-  <div>
+<div class="col-sm-8 col-sm-offset-2">
+
+<%= form_for @ambassador do |f| %>
+  <div class="form-group">
     <%= f.label :name %>
-    <div><%= f.text_field :name %></div>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :location %>
-    <div><%= f.text_field :location %></div>
+    <%= f.text_field :location, class: "form-control" %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :bio %>
-    <div><%= f.text_area :bio, :id => "postContent" %></div>
+    <%= f.text_area :bio, :id => "postContent", class: "form-control"  %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :image %>
-    <div><%= f.file_field :image %></div>
+    <%= f.file_field :image, class: "form-control" %>
   </div>
 
   <div>
-    <%= f.submit %>
+    <%= f.submit  class: "btn btn-success"%>
   </div>
 <% end %>
 
-<!-- <script>
-  $(function(){
-    $('#postContent').editable({inlineMode: false})
-  });
-</script> -->
+</div>

@@ -1,36 +1,36 @@
-<h1>Edit Ambassador</h1>
+<h2>Edit Ambassador</h2>
 
 
-<%= fetch_profile_image_model(@ambassador) %>
-<%= link_to "Remove Image", delete_img_ambassador_path, method: :delete %>
+<div class="col-sm-8 col-sm-offset-2">
 
+  <div class="text-center" >
+    <div><%= fetch_profile_image_model(@ambassador) %></div>
+    <div><%= link_to "Remove Image", delete_img_ambassador_path, method: :delete %></div>
+  </div>
 
 <%= form_for @ambassador do |f| %>
-
-  <div>
+  <div class="form-group">
     <%= f.label :name %>
-    <div><%= f.text_field :name %></div>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :location %>
-    <div><%= f.text_field :location %></div>
+    <%= f.text_field :location, class: "form-control" %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :bio %>
-    <div><%= f.text_area :bio, :id => "postContent" %></div>
+    <%= f.text_area :bio, :id => "postContent", class: "form-control"  %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :image %>
-    <div><%= f.file_field :image %></div>
-  </div>
-  <div>
-    <%= f.submit %>
+    <%= f.file_field :image, class: "form-control" %>
   </div>
 
+  <div class="text-right">
+    <%= f.submit  class: "btn btn-success" %>
+    <%= link_to "Cancel", @ambassador, class: "btn btn-danger" %>
+  </div>
 <% end %>
 
-<!-- <script>
-  $(function(){
-    $('#postContent').editable({inlineMode: false})
-  });
-</script> -->
+</div>
+

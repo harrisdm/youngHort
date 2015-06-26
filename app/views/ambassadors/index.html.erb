@@ -1,12 +1,18 @@
-<h1> list of all the Ambassadors </h1>
+<h2>Ambassadors </h2>
 
-<%= link_to "Add Ambassador", new_ambassador_path %>
+<br>
+<%= link_to "Add an Ambassador", new_ambassador_path %>
+<br><br>
 
+<div class="row">
 <% @ambassadors.each do |a| %>
-  <div>
-    <%= fetch_profile_image_model(a) %>
-  </div>
-  <div>
-    <h2>Name: <%= link_to(a.name, a) %></h2>
+  <div class="col-sm-6 col-md-4 col-lg-2 text-center">
+    <div>
+      <%= fetch_profile_image_model(a) %>
+    </div>
+    <div>
+      <h4><%= link_to(a.name, a) %></h4>
+    </div>
   </div>
 <% end %>
+</div>

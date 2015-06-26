@@ -25,9 +25,9 @@
 <body>
 
   <div id="wrapper">
-   <%= image_tag "middleLeafThin-01.svg", id: "leafLarge1" %>
-   <%= image_tag "middleLeafThin-01.svg", id: "leafLarge2" %>
-   <%= image_tag "middleLeafThin-01.svg", id: "leafLarge3" %>
+   <%= image_tag "middleLeafThin-01.svg", id: "leafLarge1", class: "leaf" %>
+   <%= image_tag "middleLeafThin-01.svg", id: "leafLarge2", class: "leaf" %>
+   <%= image_tag "middleLeafThin-01.svg", id: "leafLarge3", class: "leaf" %>
   </div>
 
 
@@ -72,26 +72,29 @@
       </div>
     </nav> -->
 
-    <nav class="navbar">
+    <nav class="menu">
       <div class="col-xs-6">
         <%= link_to((image_tag "navLogo.png"), root_path)  %>
       </div>
       <div class="col-xs-6 text-right">
 
           <% if current_user.present?  %>
-          <ul class="inline-block">
-            <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
-          </ul>
+          <div class="inline-block hidden-xs">
+            <%= link_to("Log Out", destroy_user_session_path, method: :delete) %>
+          </div>
           <% end %>
 
           <% if !current_user.present?  %>
-          <ul class="inline-block">
-            <li><%= link_to("Log In", new_user_session_path) %></li>
-            <li><%= link_to("Sign Up", new_user_registration_path) %></li>
-          </ul>
+          <div class="inline-block hidden-xs">
+            <%= link_to("Log In", new_user_session_path) %>
+          </div>
+          <div class="inline-block hidden-xs">
+            <%= link_to("Sign Up", new_user_registration_path) %>
+          </div>
           <% end  %>
 
-          <button type="button" id="nav-menu-btn" class="btn btn-default inline-block">Menu</button> 
+          <button type="button" id="nav-menu-btn" class="btn btn-default inline-block">Menu</button>
+          
       </div>
     </nav>
 
@@ -101,20 +104,22 @@
   <div id="main-menu-container">
     <div class="row">
       <div id="main-menu" class="col-sm-6 col-sm-offset-3 row col-xs-8 col-xs-offset-2 text-center">
-        <div class="col-sm-6">
-          <h2>Menu</h2>
+        
+        <% admin = current_user.present? && current_user.profile.admin? %>
+
+        
+        <div class="<%= 'col-sm-6' if admin %><%= 'col-sm-12' if !admin %>">
+          <h4>Menu</h4>
           <ul class="nav nav-pills nav-stacked">
             <li><%= link_to("Home", "#{root_path}#home", class: "hashlink") %></li>
             <li><%= link_to("About", "#{root_path}#about", class: "hashlink") %></li>
             <li><%= link_to("Ambassadors", "#{root_path}#ambassadors", class: "hashlink") %></li>
             <li><%= link_to("Contact Us", "#{root_path}#contact", class: "hashlink") %></li>
           </ul>
-          <hr>
           <ul class="nav nav-pills nav-stacked">
             <li><%= link_to("Blog", posts_path) %></li>
             <li><%= link_to("Mentors", mentors_path) %></li>
           </ul>
-          <hr>
           <% if !current_user.present?  %>
           <ul class="nav nav-pills nav-stacked">
             <li><%= link_to("Log In", new_user_session_path) %></li>
@@ -129,15 +134,16 @@
           <% end %>
 
         </div>
+        <% if admin %>
         <div class="col-sm-6">
-          <h2>Admin</h2>
+          <h4>Admin</h4>
           <ul class="nav nav-pills nav-stacked">
             <li><%= link_to("Mentors", mentors_path) %></li>
             <li><%= link_to("Ambassadors", ambassadors_path) %></li>
             <li><%= link_to("Slideshow Images", slideshow_images_path) %></li>
           </ul>
-
         </div>
+        <% end %>
       </div>
     </div>
   </div>
