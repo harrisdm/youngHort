@@ -59,101 +59,42 @@ $(document).ready(function() {
   //Tweenstuff
   ////////////
 
-  var leafLarge1 = $('#leafLarge1');
-  var leafLarge2 = $('#leafLarge2');
-  var leafLarge3 = $('#leafLarge3');
-
-  var leafFloat1 = function(rtl){
-    var speed = Math.random() * 5
-    var rotation = Math.random() * 800
-    var top = Math.random() * $('html').height();
-    leafLarge1.css('rotation',  '0deg')
-    if(rtl){
-      var left = $('html').width() + 360;
-      } else{
-        var left = -360;
-      }
-  TweenMax.to(leafLarge1, 10 + speed, {
-    // repeat: -1,
-    // yoyo:true,
-    ease:Sine.easeInOut,
-    left:left,
-    top: top,
-    rotation: rotation,
-    onComplete: function(){
-      rtl = (rtl) ? false : true;
-      leafFloat1(rtl);
-    }
-    });
-  }
-
-    var leafFloat2 = function(rtl){
-    var speed = Math.random() * 5
-    var rotation = Math.random() * 800
-    var top = Math.random() * $('html').height();
-    leafLarge2.css('rotation',  '0deg')
-    if(rtl){
-      var left = $('html').width() + 360;
-      } else{
-        var left = -360;
-      }
-  TweenMax.to(leafLarge2, 10 + speed, {
-    // repeat: -1,
-    // yoyo:true,
-    ease:Sine.easeInOut,
-    left:left,
-    top: top,
-    rotation: rotation,
-    onComplete: function(){
-      rtl = (rtl) ? false : true;
-      leafFloat2(rtl);
-    }
-    });
-  }
-
-    var leafFloat3 = function(rtl){
-    var speed = Math.random() * 5
-    var rotation = Math.random() * 800
-    var top = Math.random() * $('html').height();
-    leafLarge3.css('rotation',  '0deg')
-    if(rtl){
-      var left = $('html').width() + 360;
-      } else{
-        var left = -360;
-      }
-  TweenMax.to(leafLarge3, 10 + speed, {
-    // repeat: -1,
-    // yoyo:true,
-    ease:Sine.easeInOut,
-    left:left,
-    top: top,
-    rotation: rotation,
-    onComplete: function(){
-      rtl = (rtl) ? false : true;
-      leafFloat3(rtl);
-    }
-    });
-  }
-
-  leafFloat1(true);
-  leafFloat2(true);
-  leafFloat3(true);
-
-  ////////////
-  //Tweenstuff
-  ////////////
-
   $('#wrapper').height($('html').height());
 
+  var float = function(element, rtl){
+    var speed = Math.random() * 5
+    var rotation = Math.random() * 800
+    var top = Math.random() * $('html').height();
+    var left = (rtl) ? $('html').width() + 360 : -360;
+    element.css('rotation',  '0deg');
+
+    TweenMax.to(element, 10 + speed, {
+      ease:Sine.easeInOut,
+      left:left,
+      top: top,
+      rotation: rotation,
+      onComplete: function(){
+        rtl = (rtl) ? false : true;
+        float(element, rtl);
+      }
+    });
+  };
+
+  float($('#leafLarge1'), true);
+  float($('#leafLarge2'), false);
+  float($('#leafLarge3'), true);
 
 
-  // Flash messages fading
+
+
+  // Flash messages: Notice
   setTimeout(function() {
     $("#notice-wrapper").fadeOut("slow", function() {
       $(this).remove;
     })
   }, 4000);
 
+  // Flash messages: Alert
   setTimeout(function() {
     $("#alert-wrapper").fadeOut("slow", function() {
       $(this).remove;
@@ -164,29 +105,27 @@ $(document).ready(function() {
 
 
 
-  // The function actually applying the offset
+  // Applying the offset
   function offsetAnchor() {
     if(location.hash.length !== 0) {
       window.scrollTo(window.scrollX, window.scrollY - 100);
     }
   }
 
-    // This will capture hash changes while on the page
-    $(window).on("hashchange", function () {
-        offsetAnchor();
-    });
+  // Capture hash changes while on the page
+  $(window).on("hashchange", function () {
+      offsetAnchor();
+  });
 
-    // This is here so that when you enter the page with a hash,
-    // it can provide the offset in that case too. Having a timeout
-    // seems necessary to allow the browser to jump to the anchor first.
-    window.setTimeout(function() {
-        offsetAnchor();
-    }, 1); // The delay of 1 is arbitrary and may not always work right (although it did in my testing).
+  // For when changing page
+  window.setTimeout(function() {
+      offsetAnchor();
+  }, 1);
 
-
-    $(".hashlink").on("click", function() {
-      $("#main-menu-container").fadeToggle( "fast", "linear" );
-      $( "#nav-menu-btn" ).text("Menu");
-    });
+  // Change the menu button when a link is clicked
+  $(".hashlink").on("click", function() {
+    $("#main-menu-container").fadeToggle( "fast", "linear" );
+    $( "#nav-menu-btn" ).text("Menu");
+  });
 
 });
