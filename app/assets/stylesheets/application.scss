@@ -188,16 +188,32 @@ p.notice, p.alert {
   position: absolute;
   width: 100%;
   padding: 20px;
-  border: 5px solid white;
-  background-color: rgba(0, 0, 0, .3);
+  border: 5px solid rgba(255, 255, 255, .5);
+  border-radius: 20px;
+  background-color: rgba(223, 224, 155, .3);
   font-size: 16px; font-size: 3.5vw;
   text-align: center;
   color: white;
-  top: -25%;
+  top: -75%;
   left: -50%;
 }
 
-
+.bannerSignup{
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: -25%;
+  font-size: 14px; font-size: 2vw;
+  color: white;
+  background-color:rgba(223, 224, 155, .3);
+  text-align: center;
+  border: 3px solid rgba(255, 255, 255, .5);
+  border-radius: 10px;
+  padding: 10px;
+  a{
+    color: white;
+  }
+}
 
 /******************************
   Slanting Box

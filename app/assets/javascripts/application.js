@@ -58,8 +58,8 @@ $(document).ready(function() {
   ////////////
   //Tweenstuff
   ////////////
-
   $('#wrapper').height($('html').height());
+
 
   var float = function(element, rtl){
     var speed = Math.random() * 5
