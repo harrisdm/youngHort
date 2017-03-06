@@ -39,9 +39,9 @@ $(document).ready(function() {
   $( ".amb-img" ).on("click", function() {
     var id = $(this).data("content");
     $( ".amb-intro" ).slideUp( "fast", "linear" );
-    $( ".amb-content" ).slideUp( "fast", "linear" );
+    $( ".amb-content" ).slideUp( "2s", "swing" );
     setTimeout(function() {
-      $( "#"+id ).slideDown( "fast", "linear" );
+      $( "#"+id ).slideDown( "2s", "linear" );
     }, 500);
   });
 

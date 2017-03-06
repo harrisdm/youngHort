@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+xclass PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_if_admin, except: [:index, :show]
 
