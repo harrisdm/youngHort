@@ -1,28 +1,25 @@
-== README
+== Younghorts Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== Gems
+- devise
+- cloudinary
+- mandrill-api
+- wysiwyg 
+- bootstrap
+- will paginate
 
-Things you may want to cover:
+== Javascript Libraries
+- Standard javascript with jQuery
+- TweenMax
+- Slick.js (for the main)
 
-* Ruby version
+== Features wishlist
+- more tweenmax
+- following layouts from the wireframes
+- linking through to the individual mentor's website
+- streamlining & refactoring the code
+- streamlining the admin side of the website
+- implementing backbone for the front page
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Special thanks
+We would like to thank everyone's supoort and help (Dad and the wolf)
